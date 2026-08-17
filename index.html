@@ -13,4 +13,1694 @@
     <meta property="og:type" content="website">
     
     <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fo
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@500;600;700;800&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        /* CSS Variables */
+        :root {
+            --navy: #0A192F;
+            --blue: #0056B3;
+            --blue-light: #0073E6;
+            --white: #FFFFFF;
+            --light-gray: #F3F4F6;
+            --dark-gray: #374151;
+            --black: #111827;
+            --accent: #E5E7EB;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* Reset & Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--dark-gray);
+            background-color: var(--white);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--navy);
+            line-height: 1.2;
+        }
+        
+        .font-inter {
+            font-family: 'Inter', sans-serif;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Layout & Utilities */
+        .container {
+            width: 100%;
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 5%;
+        }
+
+        .section {
+            padding: 80px 0;
+        }
+
+        .section-dark {
+            background-color: var(--navy);
+            color: var(--white);
+        }
+        
+        .section-dark h2, .section-dark h3 {
+            color: var(--white);
+        }
+
+        .section-gray {
+            background-color: var(--light-gray);
+        }
+
+        .text-center { text-align: center; }
+        .mt-2 { margin-top: 0.5rem; }
+        .mt-4 { margin-top: 1rem; }
+        .mt-8 { margin-top: 2rem; }
+        .mb-2 { margin-bottom: 0.5rem; }
+        .mb-4 { margin-bottom: 1rem; }
+        .mb-8 { margin-bottom: 2rem; }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background-color: var(--blue);
+        }
+        
+        .text-center .section-title::after {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px 28px;
+            font-weight: 600;
+            font-family: 'Inter', sans-serif;
+            border-radius: 4px;
+            transition: var(--transition);
+            cursor: pointer;
+            border: none;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-size: 0.9rem;
+        }
+
+        .btn-primary {
+            background-color: var(--blue);
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--navy);
+            color: var(--white);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,86,179,0.3);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: var(--white);
+            border: 2px solid var(--white);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--white);
+            color: var(--navy);
+        }
+
+        .btn-navy {
+            background-color: var(--navy);
+            color: var(--white);
+        }
+        
+        .btn-navy:hover {
+            background-color: var(--blue);
+        }
+
+        /* Header & Navigation */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.98);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            z-index: 1000;
+            transition: var(--transition);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+        }
+
+        .logo img {
+            height: 50px;
+            object-fit: contain;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-link {
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: var(--navy);
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            color: var(--blue);
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--blue);
+            transition: var(--transition);
+        }
+
+        .nav-link:hover::after, .nav-link.active::after {
+            width: 100%;
+        }
+
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            border: none;
+            background: none;
+            padding: 10px;
+        }
+
+        .hamburger span {
+            display: block;
+            width: 25px;
+            height: 3px;
+            background-color: var(--navy);
+            margin: 5px 0;
+            transition: var(--transition);
+        }
+
+        /* Blueprint Animation */
+        .blueprint-bg {
+            background-color: var(--navy);
+            background-image: 
+                linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px);
+            background-size: 40px 40px;
+            position: relative;
+        }
+        
+        .blueprint-bg::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: radial-gradient(circle at center, transparent 0%, var(--navy) 100%);
+            pointer-events: none;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding-top: 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            color: var(--white);
+        }
+
+        .hero-tagline {
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--blue-light);
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .hero-title {
+            font-size: 4.5rem;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            color: var(--white);
+        }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            font-weight: 300;
+            margin-bottom: 2.5rem;
+            opacity: 0.9;
+        }
+
+        .hero-btns {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        /* Stats Section */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            margin-top: -50px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .stat-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            text-align: center;
+            border-bottom: 4px solid var(--blue);
+            transition: var(--transition);
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .stat-number {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--navy);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--dark-gray);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Grid Layouts */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+        
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+        
+        .grid-4 {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+        }
+
+        /* Cards */
+        .service-card {
+            background: var(--white);
+            border: 1px solid var(--accent);
+            padding: 2.5rem 2rem;
+            border-radius: 8px;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+            height: 100%;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background-color: var(--blue);
+            transform: scaleY(0);
+            transition: transform 0.4s ease;
+            transform-origin: bottom;
+        }
+
+        .service-card:hover {
+            box-shadow: 0 15px 30px rgba(0,0,0,0.05);
+            border-color: transparent;
+        }
+
+        .service-card:hover::before {
+            transform: scaleY(1);
+        }
+
+        .service-icon {
+            font-size: 2.5rem;
+            color: var(--blue);
+            margin-bottom: 1.5rem;
+        }
+
+        .service-title {
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Projects */
+        .project-card {
+            background: var(--white);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: var(--transition);
+        }
+        
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+
+        .project-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-bottom: 3px solid var(--blue);
+        }
+
+        .project-info {
+            padding: 1.5rem;
+        }
+        
+        .project-client {
+            font-weight: 700;
+            color: var(--navy);
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .project-meta {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.85rem;
+            color: #6B7280;
+            margin-bottom: 1rem;
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .project-scope {
+            font-size: 0.95rem;
+            color: var(--dark-gray);
+        }
+
+        /* Industry Grid */
+        .industry-card {
+            position: relative;
+            height: 250px;
+            border-radius: 8px;
+            overflow: hidden;
+            cursor: pointer;
+        }
+        
+        .industry-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .industry-overlay {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(to top, rgba(10,25,47,0.9), rgba(10,25,47,0.2));
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 1.5rem;
+            transition: var(--transition);
+        }
+        
+        .industry-card:hover img {
+            transform: scale(1.1);
+        }
+        
+        .industry-title {
+            color: var(--white);
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .industry-desc {
+            color: rgba(255,255,255,0.8);
+            font-size: 0.85rem;
+            opacity: 0;
+            max-height: 0;
+            transition: all 0.4s ease;
+            overflow: hidden;
+        }
+        
+        .industry-card:hover .industry-desc {
+            opacity: 1;
+            max-height: 100px;
+            margin-top: 10px;
+        }
+
+        /* Process Steps */
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 1rem;
+            position: relative;
+        }
+        
+        .process-step {
+            text-align: center;
+            position: relative;
+        }
+        
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background: var(--navy);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin: 0 auto 1rem auto;
+            position: relative;
+            z-index: 2;
+            border: 4px solid var(--white);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        
+        .step-title {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+        
+        .step-desc {
+            font-size: 0.85rem;
+            color: #6B7280;
+        }
+        
+        /* Line connecting steps */
+        .process-steps::after {
+            content: '';
+            position: absolute;
+            top: 30px;
+            left: 5%;
+            width: 90%;
+            height: 2px;
+            background: var(--accent);
+            z-index: 1;
+        }
+
+        /* Clients Marquee */
+        .clients-marquee {
+            overflow: hidden;
+            white-space: nowrap;
+            padding: 2rem 0;
+            background: var(--white);
+            border-top: 1px solid var(--accent);
+            border-bottom: 1px solid var(--accent);
+        }
+        
+        .marquee-content {
+            display: inline-block;
+            animation: marquee 30s linear infinite;
+        }
+        
+        .client-logo-item {
+            display: inline-block;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            font-size: 1.5rem;
+            color: var(--navy);
+            margin: 0 3rem;
+            opacity: 0.6;
+            transition: opacity 0.3s;
+        }
+        
+        .client-logo-item:hover {
+            opacity: 1;
+        }
+        
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        /* Contact & Form */
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #D1D5DB;
+            border-radius: 4px;
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+        
+        .form-control:focus {
+            outline: none;
+            border-color: var(--blue);
+            box-shadow: 0 0 0 3px rgba(0,86,179,0.1);
+        }
+        
+        textarea.form-control {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .contact-info-item {
+            display: flex;
+            margin-bottom: 1.5rem;
+        }
+        
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background: rgba(0,86,179,0.1);
+            color: var(--blue);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            margin-right: 1.25rem;
+            flex-shrink: 0;
+        }
+        
+        .contact-text h4 {
+            margin-bottom: 0.25rem;
+            font-size: 1.1rem;
+        }
+
+        /* SPA Pages */
+        .page-view {
+            display: none;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            min-height: 60vh;
+            padding-top: 80px; /* offset for fixed header */
+        }
+        
+        .page-view.active {
+            display: block;
+            opacity: 1;
+        }
+
+        .page-header {
+            background-color: var(--navy);
+            color: var(--white);
+            padding: 80px 0;
+            text-align: center;
+            position: relative;
+        }
+        
+        .page-header::before {
+            content: '';
+            position: absolute;
+            bottom: 0; left: 0;
+            width: 100%; height: 5px;
+            background: var(--blue);
+        }
+
+        /* Footer */
+        .footer {
+            background-color: var(--black);
+            color: var(--white);
+            padding: 80px 0 20px;
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1.5fr;
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+        
+        .footer-logo {
+            margin-bottom: 1.5rem;
+            max-width: 200px;
+            filter: brightness(0) invert(1);
+        }
+        
+        .footer-title {
+            color: var(--white);
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-title::after {
+            content: '';
+            position: absolute;
+            left: 0; bottom: 0;
+            width: 40px; height: 2px;
+            background: var(--blue);
+        }
+        
+        .footer-links li {
+            margin-bottom: 0.75rem;
+        }
+        
+        .footer-links a {
+            color: #9CA3AF;
+            transition: var(--transition);
+        }
+        
+        .footer-links a:hover {
+            color: var(--white);
+            padding-left: 5px;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: #9CA3AF;
+            font-size: 0.9rem;
+        }
+
+        /* Floating Buttons */
+        .fab {
+            position: fixed;
+            bottom: 30px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 24px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            z-index: 999;
+            transition: var(--transition);
+        }
+        
+        .fab:hover {
+            transform: scale(1.1);
+        }
+        
+        .fab-whatsapp {
+            right: 30px;
+            background-color: #25D366;
+        }
+        
+        .fab-call {
+            left: 30px;
+            background-color: var(--blue);
+        }
+
+        /* Media Queries */
+        @media (max-width: 1024px) {
+            .hero-title { font-size: 3.5rem; }
+            .grid-4 { grid-template-columns: repeat(2, 1fr); }
+            .process-steps { grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+            .process-steps::after { display: none; }
+            .footer-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        @media (max-width: 768px) {
+            .hamburger { display: block; }
+            .nav-menu {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 80px);
+                background-color: var(--white);
+                flex-direction: column;
+                justify-content: flex-start;
+                padding-top: 2rem;
+                transition: 0.4s;
+                gap: 1.5rem;
+            }
+            .nav-menu.active { left: 0; }
+            .nav-menu .btn { margin-top: 1rem; }
+            
+            .hero-title { font-size: 2.5rem; }
+            .stats-grid { grid-template-columns: 1fr; margin-top: 2rem; }
+            .grid-2, .grid-3 { grid-template-columns: 1fr; gap: 2rem; }
+            .section { padding: 50px 0; }
+            .footer-grid { grid-template-columns: 1fr; }
+            
+            /* Hide Call fab on mobile to save space, rely on header/footer */
+            .fab-call { display: none; }
+        }
+        
+        /* Utility icons for fallback */
+        .icon-svg {
+            width: 24px; height: 24px;
+            fill: currentColor;
+        }
+    </style>
+    
+    <!-- Schema.org -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "BMV Engineering",
+      "image": "https://raw.githubusercontent.com/ecomaura/bmv/refs/heads/main/image/Screenshot_2026-08-17-19-29-34-89_e2d5b3f32b79de1d45acd1fad96fbb0f.jpg",
+      "description": "Premium industrial engineering, fabrication, maintenance and mechanical services.",
+      "telephone": "+919714817171",
+      "email": "bmv.engineering@gmail.com",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Sargasan",
+        "addressLocality": "Gandhinagar",
+        "postalCode": "382421",
+        "addressRegion": "Gujarat",
+        "addressCountry": "IN"
+      }
+    }
+    </script>
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header class="header" id="header">
+        <div class="container nav-container">
+            <a href="#home" class="logo">
+                <img src="https://raw.githubusercontent.com/ecomaura/bmv/refs/heads/main/image/Screenshot_2026-08-17-19-29-34-89_e2d5b3f32b79de1d45acd1fad96fbb0f.jpg" alt="BMV Engineering">
+            </a>
+            <button class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav class="nav-menu" id="nav-menu">
+                <a href="#home" class="nav-link active">Home</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#services" class="nav-link">Services</a>
+                <a href="#industries" class="nav-link">Industries</a>
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="#capabilities" class="nav-link">Capabilities</a>
+                <a href="#contact" class="nav-link">Contact</a>
+                <a href="#quote" class="btn btn-primary">Request a Quote</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- SPA Container -->
+    <main id="app-root">
+
+        <!-- ================= HOME VIEW ================= -->
+        <div id="view-home" class="page-view active">
+            <!-- Hero -->
+            <section class="hero blueprint-bg">
+                <div class="container">
+                    <div class="hero-content">
+                        <span class="hero-tagline">Building | Engineering | Solutions</span>
+                        <h1 class="hero-title">Engineering Excellence.<br>Industrial Solutions.</h1>
+                        <p class="hero-subtitle">Reliable engineering, fabrication, maintenance and industrial solutions delivered with precision, safety and efficiency.</p>
+                        <div class="hero-btns">
+                            <a href="#quote" class="btn btn-primary">Request a Quote</a>
+                            <a href="#services" class="btn btn-outline">Explore Our Services</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Stats -->
+            <section style="background: var(--light-gray); padding-bottom: 80px;">
+                <div class="container">
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-number">210+</div>
+                            <div class="stat-label">Projects Completed</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">200+</div>
+                            <div class="stat-label">Satisfied Clients</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">150+</div>
+                            <div class="stat-label">Skilled Personnel</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">PAN</div>
+                            <div class="stat-label">India Execution</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Short About -->
+            <section class="section">
+                <div class="container grid-2">
+                    <div>
+                        <h2 class="section-title">Hard Work &rarr; Positive Results</h2>
+                        <p class="mt-4 mb-4">B.M.V Engineering is a registered Small-Scale Industry (SSI) specializing in precision hydro jetting, labor and manpower supply, industrial painting, maintenance of static and rotating equipment, waterproofing, fabrication, and mechanical services.</p>
+                        <p class="mb-8">We are more than a vendor. We are your partner. Building strong partnerships through transparency, communication, and a shared vision for success.</p>
+                        <a href="#about" class="btn btn-navy">Learn More About Us</a>
+                    </div>
+                    <div>
+                        <!-- Industrial Image Placeholder -->
+                        <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=800" alt="BMV Engineering Plant" style="border-radius: 8px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                    </div>
+                </div>
+            </section>
+
+            <!-- Featured Services -->
+            <section class="section section-gray">
+                <div class="container">
+                    <div class="text-center mb-8">
+                        <h2 class="section-title">Core Services</h2>
+                    </div>
+                    <div class="grid-3">
+                        <div class="service-card">
+                            <div class="service-icon">🏗️</div>
+                            <h3 class="service-title">PEB Buildings</h3>
+                            <p>Design, supply and erection of Pre-Engineered Buildings tailored to client requirements.</p>
+                        </div>
+                        <div class="service-card">
+                            <div class="service-icon">⚙️</div>
+                            <h3 class="service-title">Fabrication Works</h3>
+                            <p>Precision fabrication of structural steel, tanks, pipelines and complex industrial components.</p>
+                        </div>
+                        <div class="service-card">
+                            <div class="service-icon">🔧</div>
+                            <h3 class="service-title">Plant Maintenance</h3>
+                            <p>Comprehensive maintenance of static and rotating equipment ensuring minimal downtime.</p>
+                        </div>
+                    </div>
+                    <div class="text-center mt-8">
+                        <a href="#services" class="btn btn-outline" style="color: var(--navy); border-color: var(--navy);">View All Services</a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Marquee -->
+            <div class="clients-marquee">
+                <div class="marquee-content">
+                    <span class="client-logo-item">RELIANCE</span>
+                    <span class="client-logo-item">ADANI</span>
+                    <span class="client-logo-item">TATA CHEMICALS</span>
+                    <span class="client-logo-item">LARSEN & TOUBRO</span>
+                    <span class="client-logo-item">GNFC</span>
+                    <span class="client-logo-item">WOCKHARDT</span>
+                    <span class="client-logo-item">MEGHMANI</span>
+                    <span class="client-logo-item">JINDAL STEEL</span>
+                    <span class="client-logo-item">UPL</span>
+                    <!-- Duplicate for infinite loop effect -->
+                    <span class="client-logo-item">RELIANCE</span>
+                    <span class="client-logo-item">ADANI</span>
+                    <span class="client-logo-item">TATA CHEMICALS</span>
+                    <span class="client-logo-item">LARSEN & TOUBRO</span>
+                    <span class="client-logo-item">GNFC</span>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- ================= ABOUT VIEW ================= -->
+        <div id="view-about" class="page-view">
+            <div class="page-header blueprint-bg">
+                <div class="container">
+                    <h1 class="hero-title" style="font-size: 3.5rem;">About Us</h1>
+                    <p>Building | Engineering | Solutions</p>
+                </div>
+            </div>
+            
+            <section class="section">
+                <div class="container grid-2">
+                    <div>
+                        <img src="https://images.unsplash.com/photo-1504917595217-d4ce5eb3e212?auto=format&fit=crop&q=80&w=800" alt="BMV Team" style="border-radius: 8px;">
+                    </div>
+                    <div>
+                        <h2 class="section-title">Who We Are</h2>
+                        <p class="mt-4 mb-4">B.M.V Engineering is a dynamic Small-Scale Industry (SSI) committed to delivering excellence in the industrial sector. With an official GST registration (24DJQPR1023G1Z9), we operate from Gandhinagar with a PAN India project execution footprint.</p>
+                        <p class="mb-4">Our philosophy is simple: <strong>Hard Work &rarr; Positive Results</strong>. We specialize in providing end-to-end industrial engineering services ranging from structural fabrication and PEB erection to complex piping, industrial painting, and rigorous plant maintenance.</p>
+                        <h3 class="mt-8 mb-4">More Than a Vendor. We Are Your Partner.</h3>
+                        <p>We build strong partnerships through transparency, communication, and a shared vision for success. When you work with BMV Engineering, you are getting a dedicated team focused entirely on your operational goals.</p>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="section section-gray">
+                <div class="container">
+                    <div class="text-center mb-8">
+                        <h2 class="section-title">Why Choose BMV Engineering</h2>
+                    </div>
+                    <div class="grid-3">
+                        <div class="service-card">
+                            <h3 class="service-title">Experienced Team</h3>
+                            <p>Skilled and dedicated professionals with deep industry experience managing complex engineering tasks.</p>
+                        </div>
+                        <div class="service-card">
+                            <h3 class="service-title">Safety First</h3>
+                            <p>Strong adherence to global safety standards. Safety is never compromised.</p>
+                        </div>
+                        <div class="service-card">
+                            <h3 class="service-title">Quality Assurance</h3>
+                            <p>Meticulous focus on quality, utilizing certified materials and SOPs.</p>
+                        </div>
+                        <div class="service-card">
+                            <h3 class="service-title">Timely Delivery</h3>
+                            <p>Efficient project planning and execution to ensure strict adherence to deadlines.</p>
+                        </div>
+                        <div class="service-card">
+                            <h3 class="service-title">Modern Equipment</h3>
+                            <p>Well-maintained, state-of-the-art equipment and machinery, always ready.</p>
+                        </div>
+                        <div class="service-card">
+                            <h3 class="service-title">Client Satisfaction</h3>
+                            <p>Unwavering focus on trust, transparency, and reliable service delivery.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+
+        <!-- ================= SERVICES VIEW ================= -->
+        <div id="view-services" class="page-view">
+            <div class="page-header blueprint-bg">
+                <div class="container">
+                    <h1 class="hero-title" style="font-size: 3.5rem;">Our Services</h1>
+                    <p>Comprehensive Industrial & Mechanical Solutions</p>
+                </div>
+            </div>
+            
+            <section class="section">
+                <div class="container">
+                    <div class="grid-3">
+                        <div class="service-card">
+                            <div class="service-icon">🏭</div>
+                            <h3 class="service-title">PEB Buildings</h3>
+                            <p>Complete design, supply, and erection of Pre-Engineered Buildings. Engineered for rapid deployment and structural integrity.</p>
+                        </div>
+                        <div class="service-card">
+                            <div class="service-icon">🏗️</div>
+                            <h3 class="service-title">Roofing Solutions</h3>
+                            <p>Expert supply and installation of roofing sheets, deck sheets, and structural roofing systems.</p>
+                        </div>
+                        <div class="service-card">
+                            <div class="service-icon">⚙️</div>
+                            <h3 class="service-title">Fabrication Works</h3>
+                            <p>High-precision fabrication of structural steel, storage tanks, complex pipelines, and custom industrial components.</p>
+                        </div>
+                        <div class="service-card">
+                            <div class="service-icon">🖌️</div>
+                            <h3 class="service-title">Industrial Painting</h3>
+                            <p>Thorough surface preparation and industrial-grade painting for long-lasting protection and finish.</p>
+                        </div>
+                        <div class="service-card">
+                            <div class="service-icon">💧</div>
+                            <h3 class="service-title">Waterproofing Solutions</h3>
+                            <p>Advanced waterproofing treatments for industrial roofs, concrete structures, tanks, and other vital surfaces.</p>
+                        </div>
+                        <div class="service-card">
+                            <div class="service-icon">🔧</div>
+                            <h3 class="service-title">Plant Maintenance</h3>
+                            <p>Preventative and breakdown maintenance of both static and rotating equipment ensuring peak operational efficiency.</p>
+                        </div>
+                        <div class="service-card">
+                            <div class="service-icon">🚰</div>
+                            <h3 class="service-title">Pipeline Installation</h3>
+                            <p>Expert installation, welding, and maintenance of industrial pipelines and critical piping systems.</p>
+                        </div>
+                        <div class="service-card">
+                            <div class="service-icon">🧹</div>
+                            <h3 class="service-title">Plant Housekeeping</h3>
+                            <p>Professional industrial cleaning, hydro jetting, and systematic housekeeping services.</p>
+                        </div>
+                        <div class="service-card">
+                            <div class="service-icon">🌬️</div>
+                            <h3 class="service-title">Turbo Ventilators</h3>
+                            <p>Supply and installation of energy-efficient turbo ventilator systems for industrial sheds.</p>
+                        </div>
+                        <div class="service-card">
+                            <div class="service-icon">💡</div>
+                            <h3 class="service-title">Customised Solutions</h3>
+                            <p>Project-specific engineering solutions carefully crafted based on unique client requirements.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+
+        <!-- ================= INDUSTRIES VIEW ================= -->
+        <div id="view-industries" class="page-view">
+            <div class="page-header blueprint-bg">
+                <div class="container">
+                    <h1 class="hero-title" style="font-size: 3.5rem;">Industries We Serve</h1>
+                    <p>Delivering scale and precision across major sectors</p>
+                </div>
+            </div>
+            
+            <section class="section">
+                <div class="container grid-3">
+                    <!-- Industry Cards -->
+                    <div class="industry-card">
+                        <img src="https://images.unsplash.com/photo-1605557201121-722129596489?auto=format&fit=crop&q=80&w=600" alt="Oil & Gas">
+                        <div class="industry-overlay">
+                            <h3 class="industry-title">Oil & Gas</h3>
+                            <div class="industry-desc">Piping, fabrication, hydro jetting, and structural maintenance for refineries.</div>
+                        </div>
+                    </div>
+                    
+                    <div class="industry-card">
+                        <img src="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&q=80&w=600" alt="Power Plants">
+                        <div class="industry-overlay">
+                            <h3 class="industry-title">Power Plants</h3>
+                            <div class="industry-desc">Equipment erection, structural fabrication, and rotating equipment maintenance.</div>
+                        </div>
+                    </div>
+                    
+                    <div class="industry-card">
+                        <img src="https://images.unsplash.com/photo-1580983554868-232cb28096f3?auto=format&fit=crop&q=80&w=600" alt="Cement">
+                        <div class="industry-overlay">
+                            <h3 class="industry-title">Cement</h3>
+                            <div class="industry-desc">Silo maintenance, heavy fabrication, and industrial painting.</div>
+                        </div>
+                    </div>
+                    
+                    <div class="industry-card">
+                        <img src="https://images.unsplash.com/photo-1505088921820-21a4863bc434?auto=format&fit=crop&q=80&w=600" alt="Steel">
+                        <div class="industry-overlay">
+                            <h3 class="industry-title">Steel</h3>
+                            <div class="industry-desc">Plant housekeeping, mechanical works, and heavy structure PEB.</div>
+                        </div>
+                    </div>
+                    
+                    <div class="industry-card">
+                        <img src="https://images.unsplash.com/photo-1614059088514-69fa620e7f78?auto=format&fit=crop&q=80&w=600" alt="Chemical">
+                        <div class="industry-overlay">
+                            <h3 class="industry-title">Chemical</h3>
+                            <div class="industry-desc">Pipeline installation, anti-corrosive painting, and waterproofing.</div>
+                        </div>
+                    </div>
+                    
+                    <div class="industry-card">
+                        <img src="https://images.unsplash.com/photo-1541888062973-2e069176378e?auto=format&fit=crop&q=80&w=600" alt="Infrastructure">
+                        <div class="industry-overlay">
+                            <h3 class="industry-title">Infrastructure</h3>
+                            <div class="industry-desc">Structural roofing, PEB erection, and massive fabrication works.</div>
+                        </div>
+                    </div>
+                    
+                    <div class="industry-card">
+                        <img src="https://images.unsplash.com/photo-1586528116311-ad8ed7c83a00?auto=format&fit=crop&q=80&w=600" alt="Warehousing">
+                        <div class="industry-overlay">
+                            <h3 class="industry-title">Warehousing</h3>
+                            <div class="industry-desc">Complete PEB, turbo ventilators, and deck sheets installation.</div>
+                        </div>
+                    </div>
+                    
+                    <div class="industry-card">
+                        <img src="https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?auto=format&fit=crop&q=80&w=600" alt="Pharmaceutical">
+                        <div class="industry-overlay">
+                            <h3 class="industry-title">Pharmaceutical</h3>
+                            <div class="industry-desc">Clean room structures, specialized piping, and facility maintenance.</div>
+                        </div>
+                    </div>
+                    
+                    <div class="industry-card">
+                        <img src="https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?auto=format&fit=crop&q=80&w=600" alt="Solar">
+                        <div class="industry-overlay">
+                            <h3 class="industry-title">Solar</h3>
+                            <div class="industry-desc">Mounting structure fabrication and ground-level mechanical works.</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+
+        <!-- ================= PROJECTS VIEW ================= -->
+        <div id="view-projects" class="page-view">
+            <div class="page-header blueprint-bg">
+                <div class="container">
+                    <h1 class="hero-title" style="font-size: 3.5rem;">Featured Projects</h1>
+                    <p>Demonstrated capability across PAN India</p>
+                </div>
+            </div>
+            
+            <section class="section">
+                <div class="container grid-3">
+                    
+                    <div class="project-card">
+                        <img src="https://images.unsplash.com/photo-1503708928676-1cb796a0891e?auto=format&fit=crop&q=80&w=600" alt="Reliance Industries" class="project-img">
+                        <div class="project-info">
+                            <h3 class="project-client">Reliance Industries</h3>
+                            <div class="project-meta">
+                                <span>📍 Jamnagar, Gujarat</span>
+                                <span>📅 2022</span>
+                            </div>
+                            <p class="project-scope"><strong>Scope:</strong> Roofing, Fabrication & Erection.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card">
+                        <img src="https://images.unsplash.com/photo-1487881856722-e42a98e1e127?auto=format&fit=crop&q=80&w=600" alt="Adani Power Plant" class="project-img">
+                        <div class="project-info">
+                            <h3 class="project-client">Adani Power Plant</h3>
+                            <div class="project-meta">
+                                <span>📍 Mundra, Gujarat</span>
+                                <span>📅 2021</span>
+                            </div>
+                            <p class="project-scope"><strong>Scope:</strong> Structural Fabrication, Roofing & Erection.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card">
+                        <img src="https://images.unsplash.com/photo-1581093458791-9f3c3900df4b?auto=format&fit=crop&q=80&w=600" alt="Tata Chemicals" class="project-img">
+                        <div class="project-info">
+                            <h3 class="project-client">Tata Chemicals</h3>
+                            <div class="project-meta">
+                                <span>📍 Mithapur, Gujarat</span>
+                                <span>📅 2020</span>
+                            </div>
+                            <p class="project-scope"><strong>Scope:</strong> Fabrication, Piping & Equipment Erection.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card">
+                        <img src="https://images.unsplash.com/photo-1541888062973-2e069176378e?auto=format&fit=crop&q=80&w=600" alt="L&T Construction" class="project-img">
+                        <div class="project-info">
+                            <h3 class="project-client">L&T Construction</h3>
+                            <div class="project-meta">
+                                <span>📍 Hazira, Gujarat</span>
+                                <span>📅 2021</span>
+                            </div>
+                            <p class="project-scope"><strong>Scope:</strong> PEB Structure, Roofing & Cladding.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card">
+                        <img src="https://images.unsplash.com/photo-1580983218765-f663bcb0e501?auto=format&fit=crop&q=80&w=600" alt="GNFC Fertilizers" class="project-img">
+                        <div class="project-info">
+                            <h3 class="project-client">GNFC Fertilizers</h3>
+                            <div class="project-meta">
+                                <span>📍 Bharuch, Gujarat</span>
+                                <span>📅 2019</span>
+                            </div>
+                            <p class="project-scope"><strong>Scope:</strong> Mechanical Erection, Piping & Painting.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card">
+                        <img src="https://images.unsplash.com/photo-1563906267088-b029e7101114?auto=format&fit=crop&q=80&w=600" alt="Wockhardt Ltd" class="project-img">
+                        <div class="project-info">
+                            <h3 class="project-client">Wockhardt Ltd.</h3>
+                            <div class="project-meta">
+                                <span>📍 Aurangabad, MH</span>
+                                <span>📅 2019</span>
+                            </div>
+                            <p class="project-scope"><strong>Scope:</strong> Roofing, Fabrication & Industrial Painting.</p>
+                        </div>
+                    </div>
+                    
+                </div>
+            </section>
+        </div>
+
+
+        <!-- ================= CAPABILITIES & EQUIPMENT VIEW ================= -->
+        <div id="view-capabilities" class="page-view">
+            <div class="page-header blueprint-bg">
+                <div class="container">
+                    <h1 class="hero-title" style="font-size: 3.5rem;">Capabilities & Equipment</h1>
+                    <p>Well Maintained. Always Ready.</p>
+                </div>
+            </div>
+            
+            <!-- Capabilities -->
+            <section class="section">
+                <div class="container">
+                    <div class="text-center mb-8">
+                        <h2 class="section-title">Our Capabilities</h2>
+                    </div>
+                    <div class="grid-4">
+                        <div class="service-card text-center" style="padding: 1.5rem;">
+                            <h3 class="service-title mb-0">Engineering Design</h3>
+                        </div>
+                        <div class="service-card text-center" style="padding: 1.5rem;">
+                            <h3 class="service-title mb-0">Fabrication</h3>
+                        </div>
+                        <div class="service-card text-center" style="padding: 1.5rem;">
+                            <h3 class="service-title mb-0">Erection & Install</h3>
+                        </div>
+                        <div class="service-card text-center" style="padding: 1.5rem;">
+                            <h3 class="service-title mb-0">Mechanical Works</h3>
+                        </div>
+                        <div class="service-card text-center" style="padding: 1.5rem;">
+                            <h3 class="service-title mb-0">Piping Solutions</h3>
+                        </div>
+                        <div class="service-card text-center" style="padding: 1.5rem;">
+                            <h3 class="service-title mb-0">Electrical Works</h3>
+                        </div>
+                        <div class="service-card text-center" style="padding: 1.5rem;">
+                            <h3 class="service-title mb-0">Maintenance</h3>
+                        </div>
+                        <div class="service-card text-center" style="padding: 1.5rem;">
+                            <h3 class="service-title mb-0">Safety Management</h3>
+                        </div>
+                        <div class="service-card text-center" style="padding: 1.5rem;">
+                            <h3 class="service-title mb-0">Quality Control</h3>
+                        </div>
+                        <div class="service-card text-center" style="padding: 1.5rem;">
+                            <h3 class="service-title mb-0">Project Mgt.</h3>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Equipment -->
+            <section class="section section-gray">
+                <div class="container grid-2">
+                    <div>
+                        <h2 class="section-title">Equipment & Machinery</h2>
+                        <p class="mt-4 mb-4">We maintain a robust inventory of high-quality machinery, guaranteeing operational readiness and minimizing project delays.</p>
+                        <ul style="list-style: none; margin-top: 1.5rem;">
+                            <li style="margin-bottom: 10px; display: flex; align-items: center;"><span style="color: var(--blue); margin-right: 10px;">✔</span> Hydro Jetting Machines</li>
+                            <li style="margin-bottom: 10px; display: flex; align-items: center;"><span style="color: var(--blue); margin-right: 10px;">✔</span> Welding Equipment</li>
+                            <li style="margin-bottom: 10px; display: flex; align-items: center;"><span style="color: var(--blue); margin-right: 10px;">✔</span> Grinding Machines</li>
+                            <li style="margin-bottom: 10px; display: flex; align-items: center;"><span style="color: var(--blue); margin-right: 10px;">✔</span> Scaffolding Equipment</li>
+                            <li style="margin-bottom: 10px; display: flex; align-items: center;"><span style="color: var(--blue); margin-right: 10px;">✔</span> Gas Cutting Equipment</li>
+                            <li style="margin-bottom: 10px; display: flex; align-items: center;"><span style="color: var(--blue); margin-right: 10px;">✔</span> Drilling Machines</li>
+                            <li style="margin-bottom: 10px; display: flex; align-items: center;"><span style="color: var(--blue); margin-right: 10px;">✔</span> Heavy Lifting Equipment</li>
+                            <li style="margin-bottom: 10px; display: flex; align-items: center;"><span style="color: var(--blue); margin-right: 10px;">✔</span> Complete Safety Gear</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&fit=crop&q=80&w=800" alt="Industrial Equipment" style="border-radius: 8px;">
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Safety -->
+            <section class="section section-dark">
+                <div class="container grid-2">
+                    <div>
+                        <img src="https://images.unsplash.com/photo-1545465225-83e920d3f821?auto=format&fit=crop&q=80&w=800" alt="Safety First" style="border-radius: 8px;">
+                    </div>
+                    <div>
+                        <h2 class="section-title" style="color: var(--white);">Safety First. Quality Always.</h2>
+                        <p class="mt-4 mb-4 text-gray-300">Safety is fully integrated into every phase of our operations. We adhere strictly to standard safety practices to protect our workforce and your site.</p>
+                        
+                        <div class="grid-2 mt-4">
+                            <div>
+                                <h3 style="color: var(--blue-light); margin-bottom: 1rem; font-size: 1.1rem;">Mandatory Gear</h3>
+                                <ul style="list-style: none;">
+                                    <li style="margin-bottom: 8px;">🛡️ Safety Helmets</li>
+                                    <li style="margin-bottom: 8px;">🛡️ Safety Harnesses</li>
+                                    <li style="margin-bottom: 8px;">🛡️ Safety Shoes</li>
+                                    <li style="margin-bottom: 8px;">🛡️ Safety Gloves</li>
+                                    <li style="margin-bottom: 8px;">🛡️ Safety Nets</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h3 style="color: var(--blue-light); margin-bottom: 1rem; font-size: 1.1rem;">Quality Assurance</h3>
+                                <ul style="list-style: none;">
+                                    <li style="margin-bottom: 8px;">✅ Certified Materials</li>
+                                    <li style="margin-bottom: 8px;">✅ SOPs & Checklists</li>
+                                    <li style="margin-bottom: 8px;">✅ Regular Inspections</li>
+                                    <li style="margin-bottom: 8px;">✅ Continuous Training</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Process -->
+            <section class="section">
+                <div class="container">
+                    <div class="text-center mb-8">
+                        <h2 class="section-title">Our Project Workflow</h2>
+                    </div>
+                    <div class="process-steps">
+                        <div class="process-step">
+                            <div class="step-number">01</div>
+                            <h4 class="step-title">Understand</h4>
+                            <p class="step-desc">Understand client requirements & scope.</p>
+                        </div>
+                        <div class="process-step">
+                            <div class="step-number">02</div>
+                            <h4 class="step-title">Plan</h4>
+                            <p class="step-desc">Detailed engineering & project planning.</p>
+                        </div>
+                        <div class="process-step">
+                            <div class="step-number">03</div>
+                            <h4 class="step-title">Execute</h4>
+                            <p class="step-desc">Fabrication, erection & maintenance.</p>
+                        </div>
+                        <div class="process-step">
+                            <div class="step-number">04</div>
+                            <h4 class="step-title">Inspect</h4>
+                            <p class="step-desc">Rigorous quality & safety inspections.</p>
+                        </div>
+                        <div class="process-step">
+                            <div class="step-number">05</div>
+                            <h4 class="step-title">Deliver</h4>
+                            <p class="step-desc">Timely project handover & completion.</p>
+                        </div>
+                        <div class="process-step">
+                            <div class="step-number">06</div>
+                            <h4 class="step-title">Support</h4>
+                            <p class="step-desc">Ongoing service & support.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+
+        <!-- ================= CONTACT & QUOTE VIEW ================= -->
+        <div id="view-contact" class="page-view">
+            <div id="view-quote"></div> <!-- Anchor mapping trick -->
+            <div class="page-header blueprint-bg">
+                <div class="container">
+                    <h1 class="hero-title" style="font-size: 3.5rem;">Contact Us</h1>
+                    <p>Request a Quote or Get in Touch</p>
+                </div>
+            </div>
+            
+            <section class="section">
+                <div class="container grid-2">
+                    
+                    <!-- Contact Details -->
+                    <div>
+                        <h2 class="section-title">Get In Touch</h2>
+                        <p class="mt-4 mb-8">We are ready to handle your next major industrial project. Reach out to our team to discuss your engineering, fabrication, and maintenance needs.</p>
+                        
+                        <div class="contact-info-item">
+                            <div class="contact-icon">📍</div>
+                            <div class="contact-text">
+                                <h4>Corporate Office</h4>
+                                <p>Sargasan, Gandhinagar 382421<br>Gujarat, India</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-info-item">
+                            <div class="contact-icon">📞</div>
+                            <div class="contact-text">
+                                <h4>Phone</h4>
+                                <p>+91 97148 17171</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-info-item">
+                            <div class="contact-icon">✉️</div>
+                            <div class="contact-text">
+                                <h4>Email</h4>
+                                <p>bmv.engineering@gmail.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-info-item">
+                            <div class="contact-icon">📄</div>
+                            <div class="contact-text">
+                                <h4>GST Details</h4>
+                                <p>No.: 24DJQPR1023G1Z9</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Quote Form -->
+                    <div style="background: var(--white); padding: 2.5rem; border-radius: 8px; box-shadow: 0 10px 30px rgba(0,0,0,0.08);">
+                        <h3 class="mb-4" style="font-size: 1.5rem;">Request a Quote</h3>
+                        <form id="quoteForm" onsubmit="handleFormSubmit(event)">
+                            <div class="grid-2" style="gap: 1rem;">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="Your Name" required>
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="Company Name" required>
+                                </div>
+                            </div>
+                            <div class="grid-2" style="gap: 1rem;">
+                                <div class="form-group">
+                                    <input type="tel" class="form-control" placeholder="Phone Number" required>
+                                </div>
+                                <div class="form-group">
+                                    <input type="email" class="form-control" placeholder="Email Address" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Project Location">
+                            </div>
+                            <div class="grid-2" style="gap: 1rem;">
+                                <div class="form-group">
+                                    <select class="form-control" required>
+                                        <option value="" disabled selected>Service Required</option>
+                                        <option>PEB Buildings</option>
+                                        <option>Fabrication Works</option>
+                                        <option>Plant Maintenance</option>
+                                        <option>Industrial Painting</option>
+                                        <option>Piping & Mechanical</option>
+                                        <option>Other Services</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <select class="form-control">
+                                        <option value="" disabled selected>Industry</option>
+                                        <option>Oil & Gas</option>
+                                        <option>Power Plant</option>
+                                        <option>Cement/Steel</option>
+                                        <option>Chemical/Pharma</option>
+                                        <option>Infrastructure</option>
+                                        <option>Other</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <textarea class="form-control" placeholder="Project Description & Estimated Requirement" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary" style="width: 100%;">Submit Request</button>
+                            <div id="formSuccess" style="display: none; color: green; margin-top: 1rem; text-align: center;">Thank you! Your request has been received.</div>
+                        </form>
+                    </div>
+                    
+                </div>
+            </section>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <img src="https://raw.githubusercontent.com/ecomaura/bmv/refs/heads/main/image/Screenshot_2026-08-17-19-29-34-89_e2d5b3f32b79de1d45acd1fad96fbb0f.jpg" alt="BMV Engineering" class="footer-logo">
+                    <p style="color: #9CA3AF; margin-bottom: 1rem;">Building | Engineering | Solutions</p>
+                    <p style="color: #9CA3AF; font-size: 0.9rem;">B.M.V Engineering is a registered SSI delivering precision industrial solutions, fabrication, and maintenance across India.</p>
+                </div>
+                <div>
+                    <h4 class="footer-title">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#industries">Industries</a></li>
+                        <li><a href="#projects">Projects</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer-title">Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="#services">PEB Buildings</a></li>
+                        <li><a href="#services">Fabrication</a></li>
+                        <li><a href="#services">Plant Maintenance</a></li>
+                        <li><a href="#services">Industrial Painting</a></li>
+                        <li><a href="#services">Waterproofing</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer-title">Contact</h4>
+                    <ul class="footer-links" style="color: #9CA3AF;">
+                        <li style="display: flex; gap: 10px;"><span>📍</span> Sargasan, Gandhinagar 382421</li>
+                        <li style="display: flex; gap: 10px;"><span>📞</span> +91 97148 17171</li>
+                        <li style="display: flex; gap: 10px;"><span>✉️</span> bmv.engineering@gmail.com</li>
+                        <li style="display: flex; gap: 10px;"><span>📄</span> GST: 24DJQPR1023G1Z9</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; <span id="year"></span> BMV Engineering. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Buttons -->
+    <a href="https://wa.me/919714817171" target="_blank" class="fab fab-whatsapp" title="WhatsApp Us">
+        <svg viewBox="0 0 24 24" class="icon-svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+    </a>
+    
+    <a href="tel:+919714817171" class="fab fab-call" title="Call Us">
+        <svg viewBox="0 0 24 24" class="icon-svg"><path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.977.977 0 0 0-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z"/></svg>
+    </a>
+
+    <!-- JavaScript Application Logic -->
+    <script>
+        // Set Year
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Mobile Menu Toggle
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('nav-menu');
+        
+        hamburger.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+
+        // SPA Routing Logic
+        const views = document.querySelectorAll('.page-view');
+        const navLinks = document.querySelectorAll('.nav-link');
+
+        function handleRoute() {
+            let hash = window.location.hash || '#home';
+            
+            // Map #quote to #contact view for simplicity, as they are on the same page
+            if(hash === '#quote') {
+                hash = '#contact';
+            }
+            
+            const targetViewId = 'view-' + hash.replace('#', '');
+            const targetView = document.getElementById(targetViewId);
+
+            if (targetView) {
+                // Hide all
+                views.forEach(view => {
+                    view.classList.remove('active');
+                    setTimeout(() => { view.style.display = 'none'; }, 50); // slight delay for animation
+                });
+                
+                // Show target
+                setTimeout(() => {
+                    targetView.style.display = 'block';
+                    // Force reflow
+                    void targetView.offsetWidth;
+                    targetView.classList.add('active');
+                }, 50);
+
+                // Update active nav link
+                navLinks.forEach(link => {
+                    if (link.getAttribute('href') === hash || 
+                       (hash === '#contact' && link.getAttribute('href') === '#quote')) {
+                        link.classList.add('active');
+                    } else {
+                        link.classList.remove('active');
+                    }
+                });
+
+                // Close mobile menu
+                navMenu.classList.remove('active');
+
+                // Scroll to top
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+        }
+
+        // Initialize Router
+        window.addEventListener('hashchange', handleRoute);
+        window.addEventListener('DOMContentLoaded', handleRoute);
+
+        // Header Scroll Effect
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.style.boxShadow = '0 4px 15px rgba(0,0,0,0.1)';
+            } else {
+                header.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
+            }
+        });
+
+        // Form Submit Handler
+        function handleFormSubmit(e) {
+            e.preventDefault();
+            const btn = e.target.querySelector('button[type="submit"]');
+            const originalText = btn.textContent;
+            btn.textContent = 'Sending...';
+            btn.disabled = true;
+            
+            // Simulate API Call
+            setTimeout(() => {
+                document.getElementById('formSuccess').style.display = 'block';
+                e.target.reset();
+                btn.textContent = originalText;
+                btn.disabled = false;
+                
+                setTimeout(() => {
+                    document.getElementById('formSuccess').style.display = 'none';
+                }, 5000);
+            }, 1500);
+        }
+    </script>
+</body>
+</html>
