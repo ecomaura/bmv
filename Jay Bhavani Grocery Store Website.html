@@ -1,0 +1,1697 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jay Bhavani Grocery Store | Ahmedabad, Gujarat</title>
+  
+  <!-- Google Fonts: Plus Jakarta Sans & Playfair Display for premium editorial touch -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              900: '#0c2e1f', // Deep forest green
+              800: '#14452e',
+              700: '#1b5e3f', // Rich primary green
+              600: '#237851',
+              500: '#2d9966', // Fresh vibrant leafy green
+              400: '#48b883',
+              200: '#b8e6cf',
+              100: '#e4f6ed',
+              50: '#f0faf5',
+            },
+            cream: {
+              50: '#fdfbf7',  // Warm off-white background
+              100: '#f7f4ec',
+              200: '#eee8da',
+              300: '#ded4be',
+            },
+            accent: {
+              amber: '#e67e22',
+              gold: '#d97706',
+              warm: '#f59e0b',
+            }
+          },
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            display: ['"Outfit"', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: #fdfbf7;
+      color: #1a2e22;
+      overflow-x: hidden;
+    }
+    
+    .font-display {
+      font-family: 'Outfit', sans-serif;
+    }
+
+    /* Subtle custom scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #f7f4ec;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #b8e6cf;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #237851;
+    }
+
+    .view-transition {
+      transition: opacity 0.28s ease-in-out, transform 0.28s ease-in-out;
+    }
+    
+    .page-view {
+      display: none;
+      opacity: 0;
+      transform: translateY(8px);
+    }
+    
+    .page-view.active {
+      display: block;
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .glass-nav {
+      background: rgba(253, 251, 247, 0.94);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+
+    .card-hover {
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .card-hover:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 32px -8px rgba(20, 69, 46, 0.12);
+    }
+  </style>
+</head>
+<body class="bg-cream-50 text-[#193224] antialiased selection:bg-brand-500 selection:text-white flex flex-col min-h-screen">
+
+  <!-- Top Awareness Bar -->
+  <header class="w-full z-50 sticky top-0">
+    <div class="bg-brand-900 text-cream-100 text-xs sm:text-sm py-2 px-4 border-b border-brand-800">
+      <div class="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-2">
+        <div class="flex items-center space-x-2">
+          <span class="inline-block w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+          <span class="font-medium text-emerald-300">Jay Bhavani Grocery Store</span>
+          <span class="hidden sm:inline text-brand-400">•</span>
+          <span class="text-cream-200">Ahmedabad, Gujarat</span>
+        </div>
+        <div class="flex items-center space-x-4 text-xs">
+          <span class="hidden md:inline-flex items-center text-cream-300">
+            <i data-lucide="info" class="w-3.5 h-3.5 mr-1 text-accent-warm"></i>
+            Walk-in grocery store & product availability enquiry
+          </span>
+          <a href="tel:+919800000000" class="hover:text-emerald-300 flex items-center font-medium transition-colors">
+            <i data-lucide="phone" class="w-3.5 h-3.5 mr-1 text-emerald-400"></i> Store Helpline
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Navigation Bar -->
+    <nav class="glass-nav border-b border-cream-200 shadow-sm transition-all duration-300">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-20">
+          
+          <!-- Logo & Branding -->
+          <a href="#home" onclick="navigateTo('home'); return false;" class="flex items-center gap-3 group focus:outline-none">
+            <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-brand-700 to-brand-900 flex items-center justify-center text-white shadow-md shadow-brand-900/20 group-hover:scale-105 transition-transform duration-300 border border-brand-600">
+              <i data-lucide="shopping-bag" class="w-6 h-6 text-emerald-300"></i>
+            </div>
+            <div>
+              <div class="font-display font-bold text-xl sm:text-2xl text-brand-900 tracking-tight flex items-center">
+                JAY BHAVANI
+                <span class="ml-1.5 text-xs px-2 py-0.5 rounded-full bg-brand-100 text-brand-800 font-semibold border border-brand-200 uppercase">Ahmedabad</span>
+              </div>
+              <p class="text-xs tracking-wider uppercase font-medium text-brand-600">Grocery Store</p>
+            </div>
+          </a>
+
+          <!-- Desktop Navigation Links -->
+          <div class="hidden lg:flex items-center space-x-1">
+            <button onclick="navigateTo('home')" data-nav="home" class="nav-link px-3.5 py-2 rounded-xl text-sm font-medium transition-all text-brand-700 hover:text-brand-900 hover:bg-brand-50">Home</button>
+            <button onclick="navigateTo('about')" data-nav="about" class="nav-link px-3.5 py-2 rounded-xl text-sm font-medium transition-all text-gray-700 hover:text-brand-900 hover:bg-brand-50">About Us</button>
+            <button onclick="navigateTo('products')" data-nav="products" class="nav-link px-3.5 py-2 rounded-xl text-sm font-medium transition-all text-gray-700 hover:text-brand-900 hover:bg-brand-50">Our Products</button>
+            <button onclick="navigateTo('categories')" data-nav="categories" class="nav-link px-3.5 py-2 rounded-xl text-sm font-medium transition-all text-gray-700 hover:text-brand-900 hover:bg-brand-50">Categories</button>
+            <button onclick="navigateTo('why-us')" data-nav="why-us" class="nav-link px-3.5 py-2 rounded-xl text-sm font-medium transition-all text-gray-700 hover:text-brand-900 hover:bg-brand-50">Why Choose Us</button>
+            <button onclick="navigateTo('gallery')" data-nav="gallery" class="nav-link px-3.5 py-2 rounded-xl text-sm font-medium transition-all text-gray-700 hover:text-brand-900 hover:bg-brand-50">Gallery</button>
+            <button onclick="navigateTo('contact')" data-nav="contact" class="nav-link px-3.5 py-2 rounded-xl text-sm font-medium transition-all text-gray-700 hover:text-brand-900 hover:bg-brand-50">Contact</button>
+          </div>
+
+          <!-- Desktop Direct Store CTA -->
+          <div class="hidden sm:flex items-center space-x-3">
+            <a href="#contact" onclick="navigateTo('contact'); return false;" class="inline-flex items-center justify-center px-4 py-2.5 rounded-xl text-xs font-semibold uppercase tracking-wider text-brand-800 bg-brand-100 hover:bg-brand-200 transition-colors border border-brand-200">
+              <i data-lucide="map-pin" class="w-4 h-4 mr-1.5 text-brand-700"></i> Store Locator
+            </a>
+            <button onclick="openWhatsAppModal()" class="inline-flex items-center justify-center px-4 py-2.5 rounded-xl text-xs font-semibold uppercase tracking-wider text-white bg-brand-700 hover:bg-brand-800 shadow-md shadow-brand-700/20 transition-all">
+              <i data-lucide="message-circle" class="w-4 h-4 mr-1.5 text-emerald-200"></i> Ask Availability
+            </button>
+          </div>
+
+          <!-- Mobile Hamburger Toggle -->
+          <div class="flex items-center lg:hidden space-x-2">
+            <button onclick="openWhatsAppModal()" class="p-2 rounded-xl bg-brand-100 text-brand-800" title="WhatsApp Enquiry">
+              <i data-lucide="message-circle" class="w-5 h-5"></i>
+            </button>
+            <button id="mobileMenuBtn" onclick="toggleMobileMenu()" class="p-2 rounded-xl text-brand-900 hover:bg-cream-100 focus:outline-none" aria-label="Toggle Menu">
+              <i id="menuIcon" data-lucide="menu" class="w-6 h-6"></i>
+            </button>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Mobile Navigation Drawer -->
+      <div id="mobileMenu" class="hidden lg:hidden border-t border-cream-200 bg-cream-50 px-4 pt-3 pb-6 space-y-2 shadow-xl">
+        <button onclick="mobileNavClick('home')" class="w-full text-left px-4 py-3 rounded-xl text-base font-semibold text-brand-900 hover:bg-brand-100 flex items-center justify-between">
+          <span>Home</span>
+          <i data-lucide="chevron-right" class="w-4 h-4 text-brand-500"></i>
+        </button>
+        <button onclick="mobileNavClick('about')" class="w-full text-left px-4 py-3 rounded-xl text-base font-medium text-gray-800 hover:bg-brand-100 flex items-center justify-between">
+          <span>About Us</span>
+          <i data-lucide="chevron-right" class="w-4 h-4 text-brand-500"></i>
+        </button>
+        <button onclick="mobileNavClick('products')" class="w-full text-left px-4 py-3 rounded-xl text-base font-medium text-gray-800 hover:bg-brand-100 flex items-center justify-between">
+          <span>Our Products & Range</span>
+          <i data-lucide="chevron-right" class="w-4 h-4 text-brand-500"></i>
+        </button>
+        <button onclick="mobileNavClick('categories')" class="w-full text-left px-4 py-3 rounded-xl text-base font-medium text-gray-800 hover:bg-brand-100 flex items-center justify-between">
+          <span>Explore 13 Categories</span>
+          <i data-lucide="chevron-right" class="w-4 h-4 text-brand-500"></i>
+        </button>
+        <button onclick="mobileNavClick('why-us')" class="w-full text-left px-4 py-3 rounded-xl text-base font-medium text-gray-800 hover:bg-brand-100 flex items-center justify-between">
+          <span>Why Choose Us</span>
+          <i data-lucide="chevron-right" class="w-4 h-4 text-brand-500"></i>
+        </button>
+        <button onclick="mobileNavClick('gallery')" class="w-full text-left px-4 py-3 rounded-xl text-base font-medium text-gray-800 hover:bg-brand-100 flex items-center justify-between">
+          <span>Store Gallery</span>
+          <i data-lucide="chevron-right" class="w-4 h-4 text-brand-500"></i>
+        </button>
+        <button onclick="mobileNavClick('contact')" class="w-full text-left px-4 py-3 rounded-xl text-base font-medium text-gray-800 hover:bg-brand-100 flex items-center justify-between">
+          <span>Store Location & Contact</span>
+          <i data-lucide="chevron-right" class="w-4 h-4 text-brand-500"></i>
+        </button>
+
+        <div class="pt-4 border-t border-cream-200 grid grid-cols-2 gap-2">
+          <a href="tel:+919800000000" class="flex items-center justify-center gap-2 py-3 px-3 rounded-xl bg-brand-100 text-brand-800 font-semibold text-sm">
+            <i data-lucide="phone" class="w-4 h-4"></i> Call Store
+          </a>
+          <button onclick="openWhatsAppModal(); toggleMobileMenu();" class="flex items-center justify-center gap-2 py-3 px-3 rounded-xl bg-brand-700 text-white font-semibold text-sm shadow">
+            <i data-lucide="message-circle" class="w-4 h-4"></i> WhatsApp
+          </button>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Main Multi-View Content Container -->
+  <main class="flex-grow">
+    
+    <!-- VIEW: HOME -->
+    <section id="view-home" class="page-view active view-transition">
+      
+      <!-- Hero Section -->
+      <div class="relative overflow-hidden bg-gradient-to-b from-brand-50/70 via-cream-50 to-cream-50 py-12 lg:py-20 border-b border-cream-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            
+            <div class="lg:col-span-7 space-y-6">
+              <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-100 border border-brand-200 text-brand-800 text-xs font-semibold uppercase tracking-wider">
+                <span class="w-2 h-2 rounded-full bg-accent-amber"></span>
+                Ahmedabad's Trusted Neighbourhood Destination
+              </div>
+
+              <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl font-extrabold text-brand-900 tracking-tight leading-[1.12]">
+                Your Everyday <br>
+                <span class="text-brand-600 underline decoration-accent-amber/40 decoration-wavy decoration-2">Grocery Store</span>
+              </h1>
+
+              <p class="text-lg sm:text-xl text-gray-700 font-normal leading-relaxed max-w-xl">
+                Quality grocery essentials and everyday products for your home. Discover wholesome pulses, fragrant spices, pantry staples, and household necessities right here in Ahmedabad.
+              </p>
+
+              <!-- Informational Notice Badge -->
+              <div class="p-3.5 rounded-2xl bg-amber-50/80 border border-amber-200/80 flex items-start gap-3 max-w-xl">
+                <i data-lucide="store" class="w-5 h-5 text-accent-gold shrink-0 mt-0.5"></i>
+                <p class="text-xs text-amber-900 font-medium">
+                  <strong>Informational Portal:</strong> Browse our categories and product varieties to plan your visit or enquire on WhatsApp before coming over.
+                </p>
+              </div>
+
+              <!-- Hero Actions -->
+              <div class="flex flex-wrap items-center gap-3 pt-2">
+                <button onclick="navigateTo('products')" class="px-6 py-3.5 rounded-xl bg-brand-700 hover:bg-brand-800 text-white font-semibold text-sm shadow-lg shadow-brand-700/25 transition-all flex items-center group">
+                  Explore Our Products
+                  <i data-lucide="arrow-right" class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform"></i>
+                </button>
+                <button onclick="navigateTo('contact')" class="px-6 py-3.5 rounded-xl bg-white hover:bg-cream-100 text-brand-900 font-semibold text-sm border border-cream-300 shadow-sm transition-all flex items-center">
+                  <i data-lucide="map-pin" class="w-4 h-4 mr-2 text-brand-600"></i> Visit Our Store
+                </button>
+                <button onclick="openWhatsAppModal()" class="px-6 py-3.5 rounded-xl bg-emerald-50 hover:bg-emerald-100 text-brand-800 font-semibold text-sm border border-emerald-200 transition-all flex items-center">
+                  <i data-lucide="message-circle" class="w-4 h-4 mr-2 text-emerald-600"></i> Ask Availability
+                </button>
+              </div>
+
+              <!-- Quick Highlights Chips -->
+              <div class="pt-4 grid grid-cols-3 gap-4 border-t border-cream-200/80 max-w-lg">
+                <div class="flex flex-col">
+                  <span class="text-2xl font-bold font-display text-brand-900">13+</span>
+                  <span class="text-xs text-gray-600">Essential Categories</span>
+                </div>
+                <div class="flex flex-col">
+                  <span class="text-2xl font-bold font-display text-brand-900">100%</span>
+                  <span class="text-xs text-gray-600">Fresh & Inspected</span>
+                </div>
+                <div class="flex flex-col">
+                  <span class="text-2xl font-bold font-display text-brand-900">Local</span>
+                  <span class="text-xs text-gray-600">Ahmedabad Community</span>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Hero Imagery Showcase -->
+            <div class="lg:col-span-5 relative">
+              <div class="relative mx-auto max-w-md lg:max-w-none">
+                <!-- Decorative background elements -->
+                <div class="absolute -top-6 -left-6 w-64 h-64 bg-brand-100 rounded-full blur-3xl opacity-60"></div>
+                <div class="absolute -bottom-6 -right-6 w-64 h-64 bg-accent-warm/10 rounded-full blur-3xl opacity-60"></div>
+                
+                <!-- Main Featured Visual -->
+                <div class="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white bg-white">
+                  <img src="https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=1000&q=80" alt="Fresh Supermarket Produce and Groceries" class="w-full h-80 sm:h-96 object-cover transform hover:scale-105 transition-duration-500 duration-700" onerror="this.src='https://placehold.co/800x600/14452e/ffffff?text=Fresh+Groceries'">
+                  
+                  <div class="absolute inset-0 bg-gradient-to-t from-brand-900/80 via-transparent to-transparent"></div>
+                  
+                  <div class="absolute bottom-4 left-4 right-4 p-4 rounded-2xl bg-white/95 backdrop-blur-md shadow-lg border border-cream-200">
+                    <div class="flex items-center justify-between">
+                      <div class="flex items-center space-x-3">
+                        <div class="w-10 h-10 rounded-xl bg-brand-100 flex items-center justify-center text-brand-800">
+                          <i data-lucide="sparkles" class="w-5 h-5"></i>
+                        </div>
+                        <div>
+                          <p class="text-xs font-bold uppercase tracking-wider text-brand-700">Fresh & Pure Selection</p>
+                          <p class="text-sm font-semibold text-gray-900">Everyday Kitchen Essentials</p>
+                        </div>
+                      </div>
+                      <span class="text-xs px-2.5 py-1 rounded-full bg-emerald-100 text-emerald-800 font-semibold">In Store</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Secondary floating badges -->
+                <div class="hidden sm:flex absolute -top-4 -right-4 p-3.5 rounded-2xl bg-white shadow-xl border border-cream-200 items-center space-x-3 max-w-xs">
+                  <div class="w-10 h-10 rounded-xl bg-amber-100 text-amber-800 flex items-center justify-center">
+                    <i data-lucide="check-circle-2" class="w-5 h-5"></i>
+                  </div>
+                  <div>
+                    <p class="text-xs font-bold text-gray-900">Carefully Curated</p>
+                    <p class="text-[11px] text-gray-500">Reputed Gujarati & Pan-India Brands</p>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- Featured Category Carousel / Grid -->
+      <div class="py-16 bg-cream-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="flex flex-col md:flex-row md:items-end justify-between mb-10">
+            <div>
+              <span class="text-xs font-bold tracking-widest uppercase text-brand-600">Store Catalog Overview</span>
+              <h2 class="text-3xl sm:text-4xl font-display font-bold text-brand-900 mt-1">Explore Popular Categories</h2>
+              <p class="text-sm sm:text-base text-gray-600 mt-2 max-w-2xl">
+                We stock all primary household staples, spices, cooking oils, snacks, and personal goods for healthy Gujarati homes.
+              </p>
+            </div>
+            <button onclick="navigateTo('categories')" class="mt-4 md:mt-0 inline-flex items-center text-sm font-semibold text-brand-700 hover:text-brand-900">
+              View All 13 Categories <i data-lucide="chevron-right" class="w-4 h-4 ml-1"></i>
+            </button>
+          </div>
+
+          <!-- Quick Preview Cards -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6" id="homeFeaturedCategories">
+            <!-- Dynamically injected or static high-appeal cards -->
+          </div>
+        </div>
+      </div>
+
+      <!-- What We Offer Section -->
+      <div class="py-16 bg-cream-100 border-y border-cream-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="text-center max-w-3xl mx-auto mb-12">
+            <span class="text-xs font-bold tracking-widest uppercase text-brand-600">Comprehensive Everyday Living</span>
+            <h2 class="text-3xl sm:text-4xl font-display font-bold text-brand-900 mt-1">What We Offer At Jay Bhavani</h2>
+            <p class="text-gray-600 mt-2 text-sm sm:text-base">
+              Everything your household pantry requires under one warm, organized, and friendly neighborhood roof.
+            </p>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Feature 1 -->
+            <div class="bg-white rounded-3xl p-8 shadow-sm border border-cream-200 card-hover flex flex-col justify-between">
+              <div>
+                <div class="w-14 h-14 rounded-2xl bg-emerald-100 text-brand-700 flex items-center justify-center mb-6">
+                  <i data-lucide="wheat" class="w-7 h-7"></i>
+                </div>
+                <h3 class="font-display text-xl font-bold text-brand-900 mb-3">Authentic Grains & Dals</h3>
+                <p class="text-sm text-gray-600 leading-relaxed">
+                  Cleaned, stone-free Basmati, Kolam & Gujarat 17 rice varieties, premium Toor dal, Moong, Urad, and high-grade flours for everyday rotis and khichdi.
+                </p>
+              </div>
+              <div class="mt-6 pt-4 border-t border-cream-100 flex items-center text-xs font-semibold text-brand-700">
+                <span>Purity Inspected Daily</span>
+              </div>
+            </div>
+
+            <!-- Feature 2 -->
+            <div class="bg-white rounded-3xl p-8 shadow-sm border border-cream-200 card-hover flex flex-col justify-between">
+              <div>
+                <div class="w-14 h-14 rounded-2xl bg-amber-100 text-accent-amber flex items-center justify-center mb-6">
+                  <i data-lucide="flame" class="w-7 h-7"></i>
+                </div>
+                <h3 class="font-display text-xl font-bold text-brand-900 mb-3">Fresh Spices & Cold-Pressed Oils</h3>
+                <p class="text-sm text-gray-600 leading-relaxed">
+                  Aromatic whole spices, authentic Gujarati masala blends, pure turmeric, mustard, groundnut oils, and premium ghee suited for wholesome home cooking.
+                </p>
+              </div>
+              <div class="mt-6 pt-4 border-t border-cream-100 flex items-center text-xs font-semibold text-brand-700">
+                <span>Top Regional Producers</span>
+              </div>
+            </div>
+
+            <!-- Feature 3 -->
+            <div class="bg-white rounded-3xl p-8 shadow-sm border border-cream-200 card-hover flex flex-col justify-between">
+              <div>
+                <div class="w-14 h-14 rounded-2xl bg-blue-100 text-blue-700 flex items-center justify-center mb-6">
+                  <i data-lucide="home" class="w-7 h-7"></i>
+                </div>
+                <h3 class="font-display text-xl font-bold text-brand-900 mb-3">Household & Cleaning Needs</h3>
+                <p class="text-sm text-gray-600 leading-relaxed">
+                  Reliable laundry detergents, surface sanitizers, dish liquids, personal hygiene essentials, and Pooja items kept readily in stock for your family.
+                </p>
+              </div>
+              <div class="mt-6 pt-4 border-t border-cream-100 flex items-center text-xs font-semibold text-brand-700">
+                <span>Daily FMCG Essentials</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quality Essentials Banner -->
+      <div class="py-16 bg-cream-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="bg-brand-900 rounded-3xl overflow-hidden shadow-xl text-cream-50">
+            <div class="grid grid-cols-1 lg:grid-cols-2 items-center">
+              <div class="p-8 sm:p-12 lg:p-16 space-y-6">
+                <span class="inline-block px-3 py-1 rounded-full bg-brand-800 text-emerald-300 text-xs font-semibold tracking-wider uppercase">
+                  Purity & Trust
+                </span>
+                <h2 class="text-3xl sm:text-4xl font-display font-bold leading-tight">
+                  Fresh & Quality Essentials Guaranteed For Every Home
+                </h2>
+                <p class="text-cream-200 text-sm sm:text-base leading-relaxed">
+                  We believe that wholesome family health starts in the kitchen. Jay Bhavani Grocery Store continuously checks freshness dates, packaging integrity, and grain cleanliness so you can shop with peace of mind.
+                </p>
+                <div class="space-y-3 pt-2">
+                  <div class="flex items-center gap-3">
+                    <i data-lucide="check" class="w-5 h-5 text-emerald-400"></i>
+                    <span class="text-sm text-cream-100">Carefully screened packaged pulses and whole grains</span>
+                  </div>
+                  <div class="flex items-center gap-3">
+                    <i data-lucide="check" class="w-5 h-5 text-emerald-400"></i>
+                    <span class="text-sm text-cream-100">Consistent stock of regular and festive culinary items</span>
+                  </div>
+                  <div class="flex items-center gap-3">
+                    <i data-lucide="check" class="w-5 h-5 text-emerald-400"></i>
+                    <span class="text-sm text-cream-100">Honest guidance and helpful neighborhood assistance</span>
+                  </div>
+                </div>
+                <div class="pt-4 flex flex-wrap gap-4">
+                  <button onclick="navigateTo('why-us')" class="px-6 py-3 rounded-xl bg-emerald-500 hover:bg-emerald-600 text-white text-sm font-semibold transition-colors">
+                    Learn Why Customers Trust Us
+                  </button>
+                  <button onclick="openWhatsAppModal()" class="px-6 py-3 rounded-xl bg-brand-800 hover:bg-brand-700 text-cream-100 text-sm font-semibold border border-brand-700 transition-colors">
+                    Check Item Availability
+                  </button>
+                </div>
+              </div>
+              <div class="relative h-72 sm:h-96 lg:h-full min-h-[340px]">
+                <img src="https://images.unsplash.com/photo-1578916171728-46686eac8d58?auto=format&fit=crop&w=1000&q=80" alt="Supermarket shelves and healthy pantry selection" class="absolute inset-0 w-full h-full object-cover" onerror="this.src='https://placehold.co/800x600/14452e/ffffff?text=Quality+Essentials'">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quick Store Gallery Teaser -->
+      <div class="py-16 bg-cream-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="flex flex-col md:flex-row md:items-end justify-between mb-8">
+            <div>
+              <span class="text-xs font-bold tracking-widest uppercase text-brand-600">Atmosphere</span>
+              <h2 class="text-3xl font-display font-bold text-brand-900 mt-1">Inside The Store</h2>
+            </div>
+            <button onclick="navigateTo('gallery')" class="mt-2 md:mt-0 text-sm font-semibold text-brand-700 hover:text-brand-900 flex items-center">
+              Open Complete Store Gallery <i data-lucide="arrow-right" class="w-4 h-4 ml-1"></i>
+            </button>
+          </div>
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div class="rounded-2xl overflow-hidden shadow-sm h-48 sm:h-60 group">
+              <img src="https://images.unsplash.com/photo-1588964895597-cfccd6e2dbf9?auto=format&fit=crop&w=600&q=80" alt="Organized grocery shelves" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            </div>
+            <div class="rounded-2xl overflow-hidden shadow-sm h-48 sm:h-60 group">
+              <img src="https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=600&q=80" alt="Spices & Pulses" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            </div>
+            <div class="rounded-2xl overflow-hidden shadow-sm h-48 sm:h-60 group">
+              <img src="https://images.unsplash.com/photo-1506617564039-2f3b650b7010?auto=format&fit=crop&w=600&q=80" alt="Supermarket aisles" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            </div>
+            <div class="rounded-2xl overflow-hidden shadow-sm h-48 sm:h-60 group">
+              <img src="https://images.unsplash.com/photo-1608686207856-001b95cf60ca?auto=format&fit=crop&w=600&q=80" alt="Pantry Essentials" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="py-16 bg-cream-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="bg-gradient-to-r from-brand-800 to-brand-900 rounded-3xl p-8 sm:p-12 text-white shadow-xl flex flex-col md:flex-row items-center justify-between gap-8">
+            <div class="space-y-3 text-center md:text-left">
+              <h3 class="text-2xl sm:text-3xl font-display font-bold">Visiting Jay Bhavani in Ahmedabad?</h3>
+              <p class="text-cream-200 text-sm max-w-xl">
+                Find our store conveniently, ask about stock for specific items, or simply drop in for your family's weekly groceries.
+              </p>
+            </div>
+            <div class="flex flex-wrap gap-3 shrink-0">
+              <a href="#contact" onclick="navigateTo('contact'); return false;" class="px-5 py-3 rounded-xl bg-white text-brand-900 font-semibold text-sm hover:bg-cream-100 transition-colors shadow">
+                <i data-lucide="map-pin" class="w-4 h-4 inline mr-1 text-brand-700"></i> Get Directions
+              </a>
+              <button onclick="openWhatsAppModal()" class="px-5 py-3 rounded-xl bg-emerald-500 text-white font-semibold text-sm hover:bg-emerald-600 transition-colors shadow">
+                <i data-lucide="message-circle" class="w-4 h-4 inline mr-1"></i> WhatsApp Inquiry
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- VIEW: ABOUT US -->
+    <section id="view-about" class="page-view view-transition py-12 lg:py-20">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Header -->
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <span class="text-xs font-bold tracking-widest uppercase text-brand-600 bg-brand-100 px-3 py-1 rounded-full">Our Story & Values</span>
+          <h1 class="text-4xl sm:text-5xl font-display font-bold text-brand-900 mt-4">About Jay Bhavani Grocery Store</h1>
+          <p class="text-gray-700 mt-4 text-base sm:text-lg leading-relaxed">
+            A reliable neighborhood grocery haven in Ahmedabad dedicated to authentic kitchen ingredients, everyday pantry supplies, and personal shopping care.
+          </p>
+        </div>
+
+        <!-- Narrative Section -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
+          <div class="space-y-6">
+            <h2 class="text-2xl sm:text-3xl font-display font-bold text-brand-900">
+              Serving Ahmedabad Households With Genuine Warmth & Integrity
+            </h2>
+            <p class="text-gray-700 leading-relaxed">
+              At <strong>Jay Bhavani Grocery Store</strong>, we pride ourselves on being more than just a place to buy packaged goods. We are an integral part of our local Ahmedabad neighborhood, greeting everyday shoppers, homemakers, and culinary enthusiasts who value good food and dependable household essentials.
+            </p>
+            <p class="text-gray-700 leading-relaxed">
+              From morning chai leaves and breakfast ingredients to fragrant khada masalas, dals, and kitchen cleaning products, our shelves are systematically organized to ensure a smooth, pleasant walk-in experience.
+            </p>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
+              <div class="p-4 rounded-2xl bg-white border border-cream-200 shadow-sm">
+                <div class="w-8 h-8 rounded-lg bg-brand-100 text-brand-800 flex items-center justify-center mb-2">
+                  <i data-lucide="heart" class="w-4 h-4"></i>
+                </div>
+                <h4 class="font-bold text-brand-900 text-sm">Family-First Mindset</h4>
+                <p class="text-xs text-gray-600 mt-1">We curate items that we would proudly feed and use in our own homes.</p>
+              </div>
+
+              <div class="p-4 rounded-2xl bg-white border border-cream-200 shadow-sm">
+                <div class="w-8 h-8 rounded-lg bg-brand-100 text-brand-800 flex items-center justify-center mb-2">
+                  <i data-lucide="shield-check" class="w-4 h-4"></i>
+                </div>
+                <h4 class="font-bold text-brand-900 text-sm">Uncompromising Freshness</h4>
+                <p class="text-xs text-gray-600 mt-1">Continuous stock turnover keeps spices, flour, and oils fresh.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- About Imagery Grid -->
+          <div class="grid grid-cols-2 gap-4">
+            <img src="https://images.unsplash.com/photo-1578916171728-46686eac8d58?auto=format&fit=crop&w=600&q=80" alt="Supermarket shelves" class="rounded-2xl shadow-md object-cover h-64 w-full">
+            <img src="https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=600&q=80" alt="Fresh fruits and groceries" class="rounded-2xl shadow-md object-cover h-64 w-full mt-8">
+          </div>
+        </div>
+
+        <!-- Pillars of Commitment -->
+        <div class="bg-white rounded-3xl p-8 sm:p-12 border border-cream-200 shadow-sm">
+          <div class="text-center max-w-2xl mx-auto mb-10">
+            <h3 class="font-display text-2xl sm:text-3xl font-bold text-brand-900">Our Core Service Pillars</h3>
+            <p class="text-sm text-gray-600 mt-2">Every visitor to Jay Bhavani experiences these consistent values.</p>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="text-center p-4">
+              <div class="w-12 h-12 rounded-2xl bg-brand-50 text-brand-700 flex items-center justify-center mx-auto mb-4 border border-brand-100">
+                <i data-lucide="package-search" class="w-6 h-6"></i>
+              </div>
+              <h4 class="font-bold text-brand-900 mb-2">Wide Brand Variety</h4>
+              <p class="text-xs text-gray-600 leading-relaxed">
+                Access to leading Gujarati and national brands so you are never forced to compromise on your family’s preferred taste.
+              </p>
+            </div>
+
+            <div class="text-center p-4">
+              <div class="w-12 h-12 rounded-2xl bg-brand-50 text-brand-700 flex items-center justify-center mx-auto mb-4 border border-brand-100">
+                <i data-lucide="smile" class="w-6 h-6"></i>
+              </div>
+              <h4 class="font-bold text-brand-900 mb-2">Courteous Guidance</h4>
+              <p class="text-xs text-gray-600 leading-relaxed">
+                Need a specific brand of Hing, cold-pressed mustard oil, or digestive snacks? Our team is always ready to locate it immediately.
+              </p>
+            </div>
+
+            <div class="text-center p-4">
+              <div class="w-12 h-12 rounded-2xl bg-brand-50 text-brand-700 flex items-center justify-center mx-auto mb-4 border border-brand-100">
+                <i data-lucide="check-circle" class="w-6 h-6"></i>
+              </div>
+              <h4 class="font-bold text-brand-900 mb-2">Reliable Availability</h4>
+              <p class="text-xs text-gray-600 leading-relaxed">
+                We maintain active relations with suppliers to ensure daily essentials don't run out during festivals or peak morning hours.
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- VIEW: OUR PRODUCTS -->
+    <section id="view-products" class="page-view view-transition py-12 lg:py-20">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8">
+          <div>
+            <span class="text-xs font-bold tracking-widest uppercase text-brand-600 bg-brand-100 px-3 py-1 rounded-full">Store Range</span>
+            <h1 class="text-3xl sm:text-4xl font-display font-bold text-brand-900 mt-3">Our Product Range</h1>
+            <p class="text-gray-600 text-sm sm:text-base mt-2 max-w-2xl">
+              Browse our comprehensive product ranges. For specific weights, availability or brands, reach out to us directly or visit our physical aisles.
+            </p>
+          </div>
+          
+          <!-- Search & Filter Controls -->
+          <div class="w-full md:w-72">
+            <div class="relative">
+              <input type="text" id="productSearchInput" oninput="handleCategorySearch(this.value)" placeholder="Search staples, oils, snacks..." class="w-full pl-10 pr-4 py-2.5 rounded-xl border border-cream-300 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 shadow-sm">
+              <i data-lucide="search" class="w-4 h-4 text-gray-400 absolute left-3.5 top-3"></i>
+            </div>
+          </div>
+        </div>
+
+        <!-- Non-E-commerce informational reminder -->
+        <div class="mb-8 p-4 rounded-2xl bg-brand-50 border border-brand-200 flex items-center justify-between flex-wrap gap-3 text-xs text-brand-900">
+          <div class="flex items-center gap-2">
+            <i data-lucide="help-circle" class="w-4 h-4 text-brand-600 shrink-0"></i>
+            <span><strong>Please Note:</strong> This is a catalog display only. No online purchasing or prices are listed. Inquire below for direct store confirmation.</span>
+          </div>
+          <button onclick="openWhatsAppModal()" class="font-semibold text-brand-700 hover:text-brand-900 underline">
+            Inquire via WhatsApp &rarr;
+          </button>
+        </div>
+
+        <!-- Categories / Products Grid -->
+        <div id="productsGridContainer" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Populated by JavaScript -->
+        </div>
+
+      </div>
+    </section>
+
+    <!-- VIEW: CATEGORIES -->
+    <section id="view-categories" class="page-view view-transition py-12 lg:py-20">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center max-w-3xl mx-auto mb-12">
+          <span class="text-xs font-bold tracking-widest uppercase text-brand-600 bg-brand-100 px-3 py-1 rounded-full">Organized A-Z</span>
+          <h1 class="text-3xl sm:text-5xl font-display font-bold text-brand-900 mt-3">All 13 Grocery Categories</h1>
+          <p class="text-gray-600 text-sm sm:text-base mt-3">
+            Click on any category to view the typical varieties, brands, and everyday essentials kept in stock at Jay Bhavani.
+          </p>
+        </div>
+
+        <!-- Categories Detail Layout -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6" id="allCategoriesGrid">
+          <!-- Populated by JavaScript -->
+        </div>
+
+      </div>
+    </section>
+
+    <!-- VIEW: WHY CHOOSE US -->
+    <section id="view-why-us" class="page-view view-transition py-12 lg:py-20">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <span class="text-xs font-bold tracking-widest uppercase text-brand-600 bg-brand-100 px-3 py-1 rounded-full">The Jay Bhavani Advantage</span>
+          <h1 class="text-3xl sm:text-5xl font-display font-bold text-brand-900 mt-3">Why Choose Jay Bhavani Grocery Store</h1>
+          <p class="text-gray-600 text-base sm:text-lg mt-4 leading-relaxed">
+            We are dedicated to making regular household grocery shopping calm, authentic, and completely reliable for families in Ahmedabad.
+          </p>
+        </div>
+
+        <!-- 6 Premium Visual Cards -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+          
+          <!-- Card 1 -->
+          <div class="bg-white rounded-3xl p-8 border border-cream-200 shadow-sm card-hover flex flex-col justify-between">
+            <div>
+              <div class="w-14 h-14 rounded-2xl bg-emerald-100 text-brand-700 flex items-center justify-center mb-6">
+                <i data-lucide="layout-grid" class="w-7 h-7"></i>
+              </div>
+              <h3 class="font-display text-xl font-bold text-brand-900 mb-3">Wide Product Range</h3>
+              <p class="text-sm text-gray-600 leading-relaxed">
+                From regional Gujarati snacks and pickles to national packaged food brands and organic grain alternatives, everything is under one single roof.
+              </p>
+            </div>
+            <div class="mt-6 pt-4 border-t border-cream-100 flex items-center justify-between text-xs text-brand-600 font-medium">
+              <span>Over 13 Distinct Aisles</span>
+              <i data-lucide="check" class="w-4 h-4"></i>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="bg-white rounded-3xl p-8 border border-cream-200 shadow-sm card-hover flex flex-col justify-between">
+            <div>
+              <div class="w-14 h-14 rounded-2xl bg-amber-100 text-amber-700 flex items-center justify-center mb-6">
+                <i data-lucide="shield-alert" class="w-7 h-7"></i>
+              </div>
+              <h3 class="font-display text-xl font-bold text-brand-900 mb-3">Quality Everyday Essentials</h3>
+              <p class="text-sm text-gray-600 leading-relaxed">
+                Strict stock rotation means no stale grains, rancid oils, or outdated packaging. We maintain clean and hygienic shelves.
+              </p>
+            </div>
+            <div class="mt-6 pt-4 border-t border-cream-100 flex items-center justify-between text-xs text-brand-600 font-medium">
+              <span>Freshness Assured</span>
+              <i data-lucide="check" class="w-4 h-4"></i>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="bg-white rounded-3xl p-8 border border-cream-200 shadow-sm card-hover flex flex-col justify-between">
+            <div>
+              <div class="w-14 h-14 rounded-2xl bg-blue-100 text-blue-700 flex items-center justify-center mb-6">
+                <i data-lucide="navigation" class="w-7 h-7"></i>
+              </div>
+              <h3 class="font-display text-xl font-bold text-brand-900 mb-3">Convenient Local Shopping</h3>
+              <p class="text-sm text-gray-600 leading-relaxed">
+                Easily accessible in Ahmedabad. Quick in-and-out shopping or relaxed weekend grocery runs with friendly counter checkout.
+              </p>
+            </div>
+            <div class="mt-6 pt-4 border-t border-cream-100 flex items-center justify-between text-xs text-brand-600 font-medium">
+              <span>Neighborhood Centric</span>
+              <i data-lucide="check" class="w-4 h-4"></i>
+            </div>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="bg-white rounded-3xl p-8 border border-cream-200 shadow-sm card-hover flex flex-col justify-between">
+            <div>
+              <div class="w-14 h-14 rounded-2xl bg-rose-100 text-rose-700 flex items-center justify-center mb-6">
+                <i data-lucide="users" class="w-7 h-7"></i>
+              </div>
+              <h3 class="font-display text-xl font-bold text-brand-900 mb-3">Friendly Service</h3>
+              <p class="text-sm text-gray-600 leading-relaxed">
+                Genuine Gujarati hospitality. Our staff takes the time to listen, find specific varieties, and assist elderly or busy parents.
+              </p>
+            </div>
+            <div class="mt-6 pt-4 border-t border-cream-100 flex items-center justify-between text-xs text-brand-600 font-medium">
+              <span>Warm Hospitality</span>
+              <i data-lucide="check" class="w-4 h-4"></i>
+            </div>
+          </div>
+
+          <!-- Card 5 -->
+          <div class="bg-white rounded-3xl p-8 border border-cream-200 shadow-sm card-hover flex flex-col justify-between">
+            <div>
+              <div class="w-14 h-14 rounded-2xl bg-teal-100 text-teal-700 flex items-center justify-center mb-6">
+                <i data-lucide="award" class="w-7 h-7"></i>
+              </div>
+              <h3 class="font-display text-xl font-bold text-brand-900 mb-3">Trusted Grocery Destination</h3>
+              <p class="text-sm text-gray-600 leading-relaxed">
+                Built on word-of-mouth recommendations among neighbors who expect honest measures, clear packaging, and fair practices.
+              </p>
+            </div>
+            <div class="mt-6 pt-4 border-t border-cream-100 flex items-center justify-between text-xs text-brand-600 font-medium">
+              <span>Reliable Reputation</span>
+              <i data-lucide="check" class="w-4 h-4"></i>
+            </div>
+          </div>
+
+          <!-- Card 6 -->
+          <div class="bg-white rounded-3xl p-8 border border-cream-200 shadow-sm card-hover flex flex-col justify-between">
+            <div>
+              <div class="w-14 h-14 rounded-2xl bg-purple-100 text-purple-700 flex items-center justify-center mb-6">
+                <i data-lucide="shopping-bag" class="w-7 h-7"></i>
+              </div>
+              <h3 class="font-display text-xl font-bold text-brand-900 mb-3">Household Convenience</h3>
+              <p class="text-sm text-gray-600 leading-relaxed">
+                Everything from salt and spices to detergents, toilet rolls, and breakfast cereals in one trip. Save time, fuel, and multiple trips.
+              </p>
+            </div>
+            <div class="mt-6 pt-4 border-t border-cream-100 flex items-center justify-between text-xs text-brand-600 font-medium">
+              <span>One-Stop Grocery</span>
+              <i data-lucide="check" class="w-4 h-4"></i>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Community Callout -->
+        <div class="rounded-3xl bg-cream-100 border border-cream-200 p-8 sm:p-12 text-center max-w-4xl mx-auto">
+          <h3 class="text-2xl font-display font-bold text-brand-900 mb-3">Experience the Difference in Person</h3>
+          <p class="text-gray-700 text-sm sm:text-base max-w-xl mx-auto mb-6">
+            Visit our store today in Ahmedabad. Our team is ready to welcome you and assist with all your monthly or weekly pantry requirements.
+          </p>
+          <div class="flex justify-center gap-4 flex-wrap">
+            <button onclick="navigateTo('contact')" class="px-6 py-3 rounded-xl bg-brand-700 hover:bg-brand-800 text-white font-semibold text-sm transition-all shadow">
+              View Address & Directions
+            </button>
+            <button onclick="openWhatsAppModal()" class="px-6 py-3 rounded-xl bg-white hover:bg-cream-50 text-brand-900 font-semibold text-sm border border-cream-300 transition-all shadow-sm">
+              Inquire About Items
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- VIEW: GALLERY -->
+    <section id="view-gallery" class="page-view view-transition py-12 lg:py-20">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center max-w-3xl mx-auto mb-12">
+          <span class="text-xs font-bold tracking-widest uppercase text-brand-600 bg-brand-100 px-3 py-1 rounded-full">Visual Tour</span>
+          <h1 class="text-3xl sm:text-5xl font-display font-bold text-brand-900 mt-3">Store Atmosphere & Shelves</h1>
+          <p class="text-gray-600 text-sm sm:text-base mt-3">
+            Take a look at the neat aisles, stocked provisions, fresh grains, spices, and everyday shopping atmosphere at Jay Bhavani.
+          </p>
+        </div>
+
+        <!-- Gallery Grid with Filter Tags -->
+        <div class="flex flex-wrap items-center justify-center gap-2 mb-10">
+          <button onclick="filterGallery('all')" class="gallery-tag-btn px-4 py-2 rounded-xl text-xs font-semibold transition-colors bg-brand-700 text-white" data-tag="all">All Photos</button>
+          <button onclick="filterGallery('aisles')" class="gallery-tag-btn px-4 py-2 rounded-xl text-xs font-semibold transition-colors bg-white text-gray-700 hover:bg-cream-100 border border-cream-200" data-tag="aisles">Aisles & Shelves</button>
+          <button onclick="filterGallery('spices')" class="gallery-tag-btn px-4 py-2 rounded-xl text-xs font-semibold transition-colors bg-white text-gray-700 hover:bg-cream-100 border border-cream-200" data-tag="spices">Spices & Grains</button>
+          <button onclick="filterGallery('produce')" class="gallery-tag-btn px-4 py-2 rounded-xl text-xs font-semibold transition-colors bg-white text-gray-700 hover:bg-cream-100 border border-cream-200" data-tag="produce">Fresh Produce</button>
+          <button onclick="filterGallery('household')" class="gallery-tag-btn px-4 py-2 rounded-xl text-xs font-semibold transition-colors bg-white text-gray-700 hover:bg-cream-100 border border-cream-200" data-tag="household">Household Essentials</button>
+        </div>
+
+        <!-- Images Container -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6" id="galleryContainer">
+          <!-- Populated via JS -->
+        </div>
+
+      </div>
+    </section>
+
+    <!-- VIEW: CONTACT -->
+    <section id="view-contact" class="page-view view-transition py-12 lg:py-20">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center max-w-3xl mx-auto mb-14">
+          <span class="text-xs font-bold tracking-widest uppercase text-brand-600 bg-brand-100 px-3 py-1 rounded-full">Store Locator & Help</span>
+          <h1 class="text-3xl sm:text-5xl font-display font-bold text-brand-900 mt-3">Find & Contact Us</h1>
+          <p class="text-gray-600 text-sm sm:text-base mt-3">
+            We welcome you to visit Jay Bhavani Grocery Store in Ahmedabad. For inquiries regarding specific item availability, feel free to send a message or give us a call.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
+          
+          <!-- Contact Details Cards -->
+          <div class="lg:col-span-5 space-y-6">
+            
+            <div class="bg-white rounded-3xl p-6 sm:p-8 border border-cream-200 shadow-sm space-y-6">
+              
+              <!-- Store Address -->
+              <div class="flex items-start gap-4">
+                <div class="w-12 h-12 rounded-2xl bg-brand-100 text-brand-800 flex items-center justify-center shrink-0">
+                  <i data-lucide="map-pin" class="w-6 h-6"></i>
+                </div>
+                <div>
+                  <h3 class="font-bold text-brand-900 text-base">Store Location</h3>
+                  <p class="text-sm text-gray-700 mt-1 font-medium">Jay Bhavani Grocery Store</p>
+                  <p class="text-xs text-gray-500 mt-0.5 leading-relaxed">Ahmedabad, Gujarat, India</p>
+                  <a href="https://maps.google.com/?q=Ahmedabad+Gujarat" target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-xs font-semibold text-brand-700 hover:text-brand-900 mt-2">
+                    Open in Google Maps <i data-lucide="external-link" class="w-3.5 h-3.5 ml-1"></i>
+                  </a>
+                </div>
+              </div>
+
+              <!-- Phone Call -->
+              <div class="flex items-start gap-4 pt-4 border-t border-cream-100">
+                <div class="w-12 h-12 rounded-2xl bg-emerald-100 text-brand-800 flex items-center justify-center shrink-0">
+                  <i data-lucide="phone" class="w-6 h-6"></i>
+                </div>
+                <div>
+                  <h3 class="font-bold text-brand-900 text-base">Phone Inquiries</h3>
+                  <p class="text-xs text-gray-500 mt-0.5">Call our store team during visiting hours</p>
+                  <a href="tel:+919800000000" class="inline-block text-sm font-bold text-brand-800 hover:text-brand-900 mt-1 tracking-wider">
+                    +91 98000 00000
+                  </a>
+                </div>
+              </div>
+
+              <!-- WhatsApp -->
+              <div class="flex items-start gap-4 pt-4 border-t border-cream-100">
+                <div class="w-12 h-12 rounded-2xl bg-green-100 text-emerald-800 flex items-center justify-center shrink-0">
+                  <i data-lucide="message-circle" class="w-6 h-6"></i>
+                </div>
+                <div>
+                  <h3 class="font-bold text-brand-900 text-base">WhatsApp Support</h3>
+                  <p class="text-xs text-gray-500 mt-0.5">Quick message for product inquiries</p>
+                  <button onclick="openWhatsAppModal()" class="inline-flex items-center text-xs font-bold text-emerald-700 hover:text-emerald-900 mt-1">
+                    Chat with Store Representative &rarr;
+                  </button>
+                </div>
+              </div>
+
+              <!-- Hours Notice -->
+              <div class="flex items-start gap-4 pt-4 border-t border-cream-100">
+                <div class="w-12 h-12 rounded-2xl bg-amber-100 text-accent-amber flex items-center justify-center shrink-0">
+                  <i data-lucide="clock" class="w-6 h-6"></i>
+                </div>
+                <div>
+                  <h3 class="font-bold text-brand-900 text-base">Visiting Hours</h3>
+                  <p class="text-xs text-gray-700 mt-1">Mon - Sun: Morning to Evening</p>
+                  <p class="text-[11px] text-gray-500 mt-0.5">Please contact directly for holiday or festive timing updates.</p>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Action Buttons Stack -->
+            <div class="grid grid-cols-2 gap-3">
+              <a href="tel:+919800000000" class="py-3.5 px-4 rounded-2xl bg-brand-800 hover:bg-brand-900 text-white font-semibold text-sm flex items-center justify-center gap-2 shadow-sm transition-colors">
+                <i data-lucide="phone-call" class="w-4 h-4"></i> Call Now
+              </a>
+              <a href="https://maps.google.com/?q=Ahmedabad+Gujarat" target="_blank" rel="noopener noreferrer" class="py-3.5 px-4 rounded-2xl bg-cream-200 hover:bg-cream-300 text-brand-900 font-semibold text-sm flex items-center justify-center gap-2 transition-colors">
+                <i data-lucide="navigation-2" class="w-4 h-4 text-brand-700"></i> Get Directions
+              </a>
+            </div>
+
+          </div>
+
+          <!-- Contact / Inquiry Form -->
+          <div class="lg:col-span-7">
+            <div class="bg-white rounded-3xl p-6 sm:p-10 border border-cream-200 shadow-sm">
+              <h3 class="font-display text-2xl font-bold text-brand-900 mb-2">Send an Inquiry</h3>
+              <p class="text-xs sm:text-sm text-gray-600 mb-6">
+                Have a question regarding bulk grocery inquiries, specific brand availability, or special festive stock? Send a message directly.
+              </p>
+
+              <form id="storeInquiryForm" onsubmit="handleInquirySubmit(event)" class="space-y-4">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div>
+                    <label class="block text-xs font-bold text-gray-700 uppercase tracking-wider mb-1.5" for="senderName">Your Name</label>
+                    <input type="text" id="senderName" required placeholder="e.g. Ramesh Patel" class="w-full px-4 py-3 rounded-xl border border-cream-300 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 bg-cream-50/50">
+                  </div>
+                  <div>
+                    <label class="block text-xs font-bold text-gray-700 uppercase tracking-wider mb-1.5" for="senderPhone">Phone Number</label>
+                    <input type="tel" id="senderPhone" required placeholder="e.g. 98250 XXXXX" class="w-full px-4 py-3 rounded-xl border border-cream-300 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 bg-cream-50/50">
+                  </div>
+                </div>
+
+                <div>
+                  <label class="block text-xs font-bold text-gray-700 uppercase tracking-wider mb-1.5" for="inquiryCategory">Category of Interest</label>
+                  <select id="inquiryCategory" class="w-full px-4 py-3 rounded-xl border border-cream-300 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 bg-cream-50/50">
+                    <option value="General Inquiry">General Product Inquiry</option>
+                    <option value="Staples & Grains">Staples & Grains</option>
+                    <option value="Pulses & Dals">Pulses & Dals</option>
+                    <option value="Spices & Masalas">Spices & Masalas</option>
+                    <option value="Cooking Oils & Ghee">Cooking Oils & Ghee</option>
+                    <option value="Snacks & Namkeen">Snacks & Namkeen</option>
+                    <option value="Biscuits & Bakery">Biscuits & Bakery</option>
+                    <option value="Beverages & Tea">Beverages & Tea</option>
+                    <option value="Dry Fruits & Nuts">Dry Fruits & Nuts</option>
+                    <option value="Household Cleaning">Household Cleaning</option>
+                  </select>
+                </div>
+
+                <div>
+                  <label class="block text-xs font-bold text-gray-700 uppercase tracking-wider mb-1.5" for="senderMessage">Your Note / Items You Are Looking For</label>
+                  <textarea id="senderMessage" rows="4" required placeholder="e.g. Please let me know if 5kg bags of Kolam rice and 1L sesame oil are currently in stock." class="w-full px-4 py-3 rounded-xl border border-cream-300 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 bg-cream-50/50"></textarea>
+                </div>
+
+                <div class="pt-2">
+                  <button type="submit" class="w-full sm:w-auto px-8 py-3.5 rounded-xl bg-brand-700 hover:bg-brand-800 text-white font-semibold text-sm transition-all shadow-md shadow-brand-700/20 flex items-center justify-center">
+                    <i data-lucide="send" class="w-4 h-4 mr-2"></i> Submit Inquiry
+                  </button>
+                </div>
+              </form>
+
+              <!-- Real-time form submit confirmation box -->
+              <div id="formSuccessMessage" class="hidden mt-4 p-4 rounded-2xl bg-emerald-50 border border-emerald-200 text-emerald-900 text-xs sm:text-sm">
+                <div class="flex items-center gap-2 font-bold mb-1 text-emerald-800">
+                  <i data-lucide="check-circle" class="w-4 h-4"></i> Inquiry Received!
+                </div>
+                <p>Thank you for reaching out to Jay Bhavani Grocery Store. For immediate confirmation, you can also send this inquiry over WhatsApp with one click.</p>
+                <div class="mt-3">
+                  <button onclick="openWhatsAppModal()" class="px-4 py-2 rounded-lg bg-emerald-700 text-white text-xs font-semibold">
+                    Open on WhatsApp &rarr;
+                  </button>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Embedded Interactive Map Section -->
+            <div class="mt-6 rounded-3xl overflow-hidden border border-cream-200 shadow-sm bg-white p-2">
+              <div class="rounded-2xl overflow-hidden h-64 bg-cream-200 relative">
+                <iframe 
+                  title="Ahmedabad Store Location Map"
+                  src="https://maps.google.com/maps?q=Ahmedabad,+Gujarat&t=&z=13&ie=UTF8&iwloc=&output=embed" 
+                  class="w-full h-full border-0"
+                  loading="lazy" 
+                  referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+              </div>
+              <div class="p-3 text-center">
+                <span class="text-xs text-gray-500 font-medium">Jay Bhavani Grocery Store • Serving Neighborhoods across Ahmedabad, Gujarat</span>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <div id="categoryDetailModal" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm hidden flex items-center justify-center p-4">
+      <div class="bg-white rounded-3xl max-w-2xl w-full max-h-[90vh] overflow-y-auto shadow-2xl border border-cream-200 flex flex-col">
+        <div class="relative h-48 sm:h-56 shrink-0">
+          <img id="catModalImg" src="" alt="" class="w-full h-full object-cover">
+          <div class="absolute inset-0 bg-gradient-to-t from-brand-900/90 via-black/30 to-transparent"></div>
+          <button onclick="closeCategoryModal()" class="absolute top-4 right-4 w-9 h-9 rounded-full bg-white/80 hover:bg-white text-brand-900 flex items-center justify-center transition-colors">
+            <i data-lucide="x" class="w-5 h-5"></i>
+          </button>
+          <div class="absolute bottom-4 left-6 right-6 text-white">
+            <span class="text-xs uppercase tracking-wider font-semibold text-emerald-300">Category Details</span>
+            <h2 id="catModalTitle" class="text-2xl sm:text-3xl font-display font-bold">Category Title</h2>
+          </div>
+        </div>
+
+        <div class="p-6 sm:p-8 space-y-6 flex-grow">
+          <div>
+            <h4 class="text-xs font-bold uppercase tracking-wider text-brand-700 mb-2">Category Overview</h4>
+            <p id="catModalDesc" class="text-sm text-gray-700 leading-relaxed"></p>
+          </div>
+
+          <div>
+            <h4 class="text-xs font-bold uppercase tracking-wider text-brand-700 mb-3">Common Items In Stock</h4>
+            <div id="catModalItems" class="flex flex-wrap gap-2">
+              <!-- Item badges injected here -->
+            </div>
+          </div>
+
+          <div class="p-4 rounded-2xl bg-cream-100 border border-cream-200 text-xs text-gray-600 flex items-start gap-2">
+            <i data-lucide="info" class="w-4 h-4 text-brand-700 shrink-0 mt-0.5"></i>
+            <span>This list displays representative products and trusted brand varieties available at our Ahmedabad store. Walk in or WhatsApp us to check real-time stock.</span>
+          </div>
+
+          <div class="flex flex-wrap items-center justify-between gap-3 pt-2">
+            <button onclick="askCategoryOnWhatsApp()" class="flex-1 px-5 py-3 rounded-xl bg-brand-700 hover:bg-brand-800 text-white font-semibold text-xs uppercase tracking-wider flex items-center justify-center gap-2 shadow">
+              <i data-lucide="message-circle" class="w-4 h-4 text-emerald-300"></i> Ask Availability On WhatsApp
+            </button>
+            <button onclick="closeCategoryModal()" class="px-5 py-3 rounded-xl bg-cream-200 hover:bg-cream-300 text-brand-900 font-semibold text-xs uppercase tracking-wider">
+              Close
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Image Lightbox Modal -->
+  <div id="lightboxModal" class="fixed inset-0 z-50 bg-black/90 backdrop-blur-md hidden flex items-center justify-center p-4" onclick="closeLightbox()">
+    <div class="relative max-w-4xl w-full max-h-[90vh] flex flex-col items-center" onclick="event.stopPropagation()">
+      <button onclick="closeLightbox()" class="absolute -top-12 right-0 text-white hover:text-emerald-400 p-2 text-sm font-semibold flex items-center gap-1">
+        Close <i data-lucide="x" class="w-6 h-6"></i>
+      </button>
+      <img id="lightboxImg" src="" alt="Gallery Image Enlarge" class="rounded-2xl max-h-[80vh] w-auto max-w-full object-contain shadow-2xl border border-white/10">
+      <p id="lightboxCaption" class="text-cream-100 text-sm mt-4 font-medium text-center"></p>
+    </div>
+  </div>
+
+  <!-- WhatsApp Enquiry Modal -->
+  <div id="whatsAppModal" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm hidden flex items-center justify-center p-4">
+    <div class="bg-white rounded-3xl max-w-md w-full p-6 sm:p-8 shadow-2xl border border-cream-200 relative">
+      <button onclick="closeWhatsAppModal()" class="absolute top-5 right-5 text-gray-400 hover:text-gray-700">
+        <i data-lucide="x" class="w-5 h-5"></i>
+      </button>
+
+      <div class="flex items-center space-x-3 mb-5">
+        <div class="w-12 h-12 rounded-2xl bg-emerald-100 text-emerald-700 flex items-center justify-center">
+          <i data-lucide="message-circle" class="w-6 h-6"></i>
+        </div>
+        <div>
+          <h3 class="font-display font-bold text-lg text-brand-900">WhatsApp Product Enquiry</h3>
+          <p class="text-xs text-gray-500">Jay Bhavani Grocery Store • Ahmedabad</p>
+        </div>
+      </div>
+
+      <p class="text-xs sm:text-sm text-gray-600 mb-4">
+        You will be redirected to WhatsApp with your pre-filled inquiry. You can edit the text before sending.
+      </p>
+
+      <div class="space-y-3 mb-6">
+        <label class="block text-xs font-bold text-gray-700 uppercase tracking-wider">Inquiry Message</label>
+        <textarea id="whatsAppCustomMsg" rows="3" class="w-full px-4 py-3 rounded-xl border border-cream-300 text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 bg-cream-50">Hi Jay Bhavani Grocery Store, I would like to enquire about product availability.</textarea>
+      </div>
+
+      <div class="flex items-center gap-3">
+        <button onclick="sendWhatsAppInquiry()" class="flex-1 py-3 px-4 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white text-xs sm:text-sm font-semibold flex items-center justify-center gap-2 shadow-lg shadow-emerald-600/20">
+          <i data-lucide="send" class="w-4 h-4"></i> Open in WhatsApp
+        </button>
+        <button onclick="closeWhatsAppModal()" class="py-3 px-4 rounded-xl bg-cream-200 hover:bg-cream-300 text-gray-800 text-xs sm:text-sm font-medium">
+          Cancel
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Floating Quick Action Buttons (Mobile & Desktop) -->
+  <div class="fixed bottom-6 right-6 z-40 flex flex-col space-y-3 items-end">
+    <!-- Call Quick Button -->
+    <a href="tel:+919800000000" class="w-12 h-12 rounded-full bg-brand-800 text-white flex items-center justify-center shadow-lg hover:scale-110 active:scale-95 transition-all border-2 border-white group relative" title="Call Store">
+      <i data-lucide="phone" class="w-5 h-5"></i>
+      <span class="absolute right-14 bg-brand-900 text-white text-xs px-2.5 py-1 rounded-lg shadow-md whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none hidden md:block">
+        Call Store
+      </span>
+    </a>
+
+    <!-- WhatsApp Floating Button -->
+    <button onclick="openWhatsAppModal()" class="w-14 h-14 rounded-full bg-emerald-600 text-white flex items-center justify-center shadow-xl hover:scale-110 active:scale-95 transition-all border-2 border-white group relative" title="WhatsApp Us">
+      <i data-lucide="message-circle" class="w-7 h-7"></i>
+      <span class="absolute right-16 bg-brand-900 text-white text-xs px-3 py-1.5 rounded-xl shadow-md whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none hidden md:block">
+        Enquire Availability
+      </span>
+      <!-- Pulsing radar ring -->
+      <span class="absolute inset-0 rounded-full bg-emerald-400 -z-10 animate-ping opacity-25"></span>
+    </button>
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-brand-900 text-cream-100 pt-16 pb-12 border-t border-brand-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-12 border-b border-brand-800/80">
+        
+        <!-- Brand Summary -->
+        <div class="lg:col-span-2 space-y-4">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-brand-700 flex items-center justify-center text-white border border-brand-600">
+              <i data-lucide="shopping-bag" class="w-5 h-5 text-emerald-300"></i>
+            </div>
+            <span class="font-display font-bold text-xl text-white tracking-tight">JAY BHAVANI GROCERY</span>
+          </div>
+          <p class="text-xs sm:text-sm text-cream-300 leading-relaxed max-w-sm">
+            Ahmedabad's dependable grocery destination. Providing clean grains, authentic spices, wholesome pantry ingredients, and household essentials for the family.
+          </p>
+          <div class="p-3 rounded-xl bg-brand-800/60 border border-brand-700/60 text-[11px] text-cream-200">
+            <strong>Informational Store Website:</strong> In-store walk-in shopping & inventory enquiry only. No payment gateway or direct online checkout.
+          </div>
+        </div>
+
+        <!-- Navigation Links -->
+        <div>
+          <h4 class="text-xs font-bold uppercase tracking-widest text-emerald-400 mb-4">Quick Navigation</h4>
+          <ul class="space-y-2 text-xs sm:text-sm text-cream-300">
+            <li><button onclick="navigateTo('home')" class="hover:text-white transition-colors">Home Page</button></li>
+            <li><button onclick="navigateTo('about')" class="hover:text-white transition-colors">About Our Store</button></li>
+            <li><button onclick="navigateTo('products')" class="hover:text-white transition-colors">Product Catalog</button></li>
+            <li><button onclick="navigateTo('categories')" class="hover:text-white transition-colors">13 Categories</button></li>
+            <li><button onclick="navigateTo('why-us')" class="hover:text-white transition-colors">Why Choose Us</button></li>
+            <li><button onclick="navigateTo('gallery')" class="hover:text-white transition-colors">Store Gallery</button></li>
+            <li><button onclick="navigateTo('contact')" class="hover:text-white transition-colors">Contact & Directions</button></li>
+          </ul>
+        </div>
+
+        <!-- Featured Categories Quick List -->
+        <div>
+          <h4 class="text-xs font-bold uppercase tracking-widest text-emerald-400 mb-4">Popular Aisles</h4>
+          <ul class="space-y-2 text-xs sm:text-sm text-cream-300">
+            <li><button onclick="showCategoryDetailModal(0)" class="hover:text-white transition-colors">Staples & Grains</button></li>
+            <li><button onclick="showCategoryDetailModal(1)" class="hover:text-white transition-colors">Pulses & Dals</button></li>
+            <li><button onclick="showCategoryDetailModal(2)" class="hover:text-white transition-colors">Spices & Masalas</button></li>
+            <li><button onclick="showCategoryDetailModal(3)" class="hover:text-white transition-colors">Cooking Oils & Ghee</button></li>
+            <li><button onclick="showCategoryDetailModal(4)" class="hover:text-white transition-colors">Snacks & Namkeen</button></li>
+            <li><button onclick="showCategoryDetailModal(8)" class="hover:text-white transition-colors">Dry Fruits & Nuts</button></li>
+          </ul>
+        </div>
+
+        <!-- Contact & Storefront Summary -->
+        <div>
+          <h4 class="text-xs font-bold uppercase tracking-widest text-emerald-400 mb-4">Store Details</h4>
+          <ul class="space-y-2.5 text-xs text-cream-300">
+            <li class="flex items-start gap-2">
+              <i data-lucide="map-pin" class="w-4 h-4 text-emerald-400 shrink-0 mt-0.5"></i>
+              <span>Ahmedabad, Gujarat, India</span>
+            </li>
+            <li class="flex items-center gap-2">
+              <i data-lucide="phone" class="w-4 h-4 text-emerald-400 shrink-0"></i>
+              <a href="tel:+919800000000" class="hover:text-white">+91 98000 00000</a>
+            </li>
+            <li class="flex items-center gap-2">
+              <i data-lucide="message-circle" class="w-4 h-4 text-emerald-400 shrink-0"></i>
+              <button onclick="openWhatsAppModal()" class="hover:text-white underline">WhatsApp Available</button>
+            </li>
+            <li class="flex items-center gap-2">
+              <i data-lucide="clock" class="w-4 h-4 text-emerald-400 shrink-0"></i>
+              <span>Mon - Sun: Store Visiting Hours</span>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-cream-300">
+        <p>© 2026 Jay Bhavani Grocery Store, Ahmedabad, Gujarat. All rights reserved.</p>
+        <p class="text-cream-300 flex items-center gap-1">
+          Crafted for Gujarat households with <i data-lucide="heart" class="w-3.5 h-3.5 text-red-400 fill-red-400 inline"></i> and freshness.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    /* ========================================================================
+       MASTER DATA STORE: 13 Comprehensive Product Categories (Informational)
+       ======================================================================== */
+    const GROCERY_CATEGORIES = [
+      {
+        id: "staples-grains",
+        title: "Staples & Grains",
+        image: "https://images.unsplash.com/photo-1586201375761-83865001e31c?auto=format&fit=crop&w=800&q=80",
+        summary: "Essential flours, premium Basmati, Kolam & Gujarat-17 rice, whole wheat, and semolina.",
+        items: ["Gujarat 17 Rice", "Basmati Classic Rice", "Chakki Fresh Atta", "Whole Wheat Grain", "Sooji (Rava)", "Maida & Besan", "Poha (Flattened Rice)", "Dalia & Oats"]
+      },
+      {
+        id: "pulses-dals",
+        title: "Pulses & Dals",
+        image: "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=800&q=80",
+        summary: "High-protein unpolished Toor dal, Chana dal, Moong varieties, and nutritious Rajma & Chole.",
+        items: ["Desi Toor Dal", "Moong Dal & Moong Chilka", "Chana Dal", "Urad Dal (White & Split)", "Masoor Dal", "Kabuli Chana", "Kala Chana", "Rajma & Lobia"]
+      },
+      {
+        id: "spices-masalas",
+        title: "Spices & Masalas",
+        image: "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=800&q=80",
+        summary: "Pure turmeric, aromatic coriander-cumin powder, Gujarati garam masala, and whole spices.",
+        items: ["Kashmiri & Reshampatti Mirch", "Salem Haldi Powder", "Dhaniya-Jeera Powder", "Mustard (Rai) & Jeera", "Whole Cloves, Cinnamon & Cardamom", "Gujarati Sambhar Masala", "Hing (Asafoetida)", "Kasuri Methi"]
+      },
+      {
+        id: "cooking-oils",
+        title: "Cooking Oils & Ghee",
+        image: "https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?auto=format&fit=crop&w=800&q=80",
+        summary: "Pure groundnut oil, mustard oil, sunflower oils, and pure desi cow & buffalo ghee tins.",
+        items: ["Filtered Groundnut (Sing) Oil", "Kachi Ghani Mustard Oil", "Refined Sunflower Oil", "Pure Cow Ghee", "Cottonseed (Kapasiya) Oil", "Til (Sesame) Oil", "Olive Oil Blends"]
+      },
+      {
+        id: "snacks-namkeen",
+        title: "Snacks & Namkeen",
+        image: "https://images.unsplash.com/photo-1566478989037-eec170784d0b?auto=format&fit=crop&w=800&q=80",
+        summary: "Authentic Gujarati farsan, sev, khakhra, bhakarwadi, chips, and tea-time crunch.",
+        items: ["Methi & Jeera Khakhra", "Ratlami & Bhavnagri Sev", "Bhakarwadi", "Banana Wafers", "Chivda & Roasted Mix", "Potato Chips", "Papad & Fryums"]
+      },
+      {
+        id: "biscuits-bakery",
+        title: "Biscuits & Bakery",
+        image: "https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=800&q=80",
+        summary: "Crispy tea toasts, cream biscuits, glucose cookies, rusk, and digestive tea accompaniments.",
+        items: ["Cardamom Toast / Rusk", "Marie & Digestive Biscuits", "Cream & Choco Cookies", "Butter Cookies", "Fruit Cakes & Buns", "Khari Biscuits"]
+      },
+      {
+        id: "beverages",
+        title: "Beverages & Tea",
+        image: "https://images.unsplash.com/photo-1544787219-7f47ccb76574?auto=format&fit=crop&w=800&q=80",
+        summary: "Strong Gujarat blend CTC tea, green teas, ground coffee, instant coffee, syrups and squashes.",
+        items: ["Gujarat CTC Dust Tea", "Premium Leaf Tea", "Green & Herbal Teas", "Filter Coffee & Instant Coffee", "Energy Health Drinks", "Sharbat & Fruit Squashes"]
+      },
+      {
+        id: "dairy-breakfast",
+        title: "Dairy & Breakfast",
+        image: "https://images.unsplash.com/photo-1550583724-b2692b85b150?auto=format&fit=crop&w=800&q=80",
+        summary: "Fresh packaged dairy, butter, cheese blocks, breakfast cereals, cornflakes, and honey.",
+        items: ["Pasteurized Butter", "Processed Cheese Cubes & Slices", "Cornflakes & Muesli", "Pure Honey", "Paneer & Curd", "Condensed Milk & Dairy Cream"]
+      },
+      {
+        id: "dry-fruits-nuts",
+        title: "Dry Fruits & Nuts",
+        image: "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=800&q=80",
+        summary: "Select California almonds, whole cashews, Afghani raisins, walnuts, dates, and festive packs.",
+        items: ["Premium Badam (Almonds)", "W320 & Jumbo Kaju (Cashews)", "Kishmish (Raisins)", "Akhrot (Walnut Kernels)", "Pista (Salted & Plain)", "Arabian Dates", "Anjeer (Dry Figs)"]
+      },
+      {
+        id: "packaged-foods",
+        title: "Packaged Foods",
+        image: "https://images.unsplash.com/photo-1612927601601-6638404737ce?auto=format&fit=crop&w=800&q=80",
+        summary: "Instant noodles, pasta, ready-to-cook gravy pastes, soups, tomato ketchup, and jams.",
+        items: ["Atta & Instant Noodles", "Macaroni & Pasta", "Tomato Ketchup & Sauces", "Mixed Fruit Jams", "Ready Masala Pastes", "Instant Cup Soups", "Vinegar & Soy Sauces"]
+      },
+      {
+        id: "personal-care",
+        title: "Personal Care",
+        image: "https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&w=800&q=80",
+        summary: "Bathing soaps, herbal shampoos, toothpastes, skin creams, hair oils, and grooming essentials.",
+        items: ["Bath Soaps & Body Washes", "Herbal Hair Oils", "Shampoos & Conditioners", "Ayurvedic & Regular Toothpastes", "Moisturizing Lotions", "Face Washes & Talcum"]
+      },
+      {
+        id: "home-cleaning",
+        title: "Home Cleaning",
+        image: "https://images.unsplash.com/photo-1585421514738-01798e348b17?auto=format&fit=crop&w=800&q=80",
+        summary: "Detergent powders, fabric conditioners, dishwash gels, floor cleaners, and scrubbers.",
+        items: ["Washing Powders & Liquids", "Dishwash Gels & Bars", "Surface & Floor Cleaners", "Toilet Cleaners", "Steel Scrubbers & Sponges", "Garbage Bags & Floor Wipes"]
+      },
+      {
+        id: "household-essentials",
+        title: "Household Essentials",
+        image: "https://images.unsplash.com/photo-1608686207856-001b95cf60ca?auto=format&fit=crop&w=800&q=80",
+        summary: "Matchboxes, camphor, pooja oils, agarbatti, foil rolls, kitchen napkins, and cleaning cloths.",
+        items: ["Pooja Agarbatti & Dhoop", "Bhimseni Camphor", "Pooja Til & Mustard Oils", "Aluminium Foil & Cling Film", "Kitchen Paper Towels", "Cotton Wicks & Diya Supplies"]
+      }
+    ];
+
+    const GALLERY_ITEMS = [
+      {
+        title: "Well-Organized Grocery Aisles",
+        tag: "aisles",
+        img: "https://images.unsplash.com/photo-1588964895597-cfccd6e2dbf9?auto=format&fit=crop&w=1000&q=80"
+      },
+      {
+        title: "Authentic Gujarati Spices & Herbs",
+        tag: "spices",
+        img: "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=1000&q=80"
+      },
+      {
+        title: "Freshness-Checked Whole Grains",
+        tag: "spices",
+        img: "https://images.unsplash.com/photo-1586201375761-83865001e31c?auto=format&fit=crop&w=1000&q=80"
+      },
+      {
+        title: "Clean Modern Store Shelves",
+        tag: "aisles",
+        img: "https://images.unsplash.com/photo-1578916171728-46686eac8d58?auto=format&fit=crop&w=1000&q=80"
+      },
+      {
+        title: "Wholesome Daily Farm Selection",
+        tag: "produce",
+        img: "https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=1000&q=80"
+      },
+      {
+        title: "Packaged Pantry & Essentials",
+        tag: "household",
+        img: "https://images.unsplash.com/photo-1608686207856-001b95cf60ca?auto=format&fit=crop&w=1000&q=80"
+      },
+      {
+        title: "Everyday Cooking Oils & Ghee Tins",
+        tag: "spices",
+        img: "https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?auto=format&fit=crop&w=1000&q=80"
+      },
+      {
+        title: "Tea, Biscuits & Morning Bakery",
+        tag: "household",
+        img: "https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=1000&q=80"
+      },
+      {
+        title: "Spacious Neighborhood Shopping Experience",
+        tag: "aisles",
+        img: "https://images.unsplash.com/photo-1506617564039-2f3b650b7010?auto=format&fit=crop&w=1000&q=80"
+      }
+    ];
+
+    let currentActiveCategoryIndex = 0;
+
+    function navigateTo(viewId) {
+      // Hide all page-views
+      document.querySelectorAll('.page-view').forEach(view => {
+        view.classList.remove('active');
+      });
+
+      // Update Nav Link styles
+      document.querySelectorAll('.nav-link').forEach(link => {
+        if (link.getAttribute('data-nav') === viewId) {
+          link.classList.remove('text-gray-700');
+          link.classList.add('text-brand-900', 'bg-brand-100', 'font-bold');
+        } else {
+          link.classList.add('text-gray-700');
+          link.classList.remove('text-brand-900', 'bg-brand-100', 'font-bold');
+        }
+      });
+
+      // Activate chosen view
+      const targetView = document.getElementById(`view-${viewId}`);
+      if (targetView) {
+        targetView.classList.add('active');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+
+      // Close mobile menu if open
+      const mobileMenu = document.getElementById('mobileMenu');
+      if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
+        mobileMenu.classList.add('hidden');
+      }
+
+      // Refresh Lucide icons inside newly visible views
+      lucide.createIcons();
+    }
+
+    function mobileNavClick(viewId) {
+      navigateTo(viewId);
+      toggleMobileMenu();
+    }
+
+    function toggleMobileMenu() {
+      const menu = document.getElementById('mobileMenu');
+      menu.classList.toggle('hidden');
+    }
+
+    function renderHomeFeaturedCategories() {
+      const container = document.getElementById('homeFeaturedCategories');
+      if (!container) return;
+      
+      const featured = GROCERY_CATEGORIES.slice(0, 4);
+      container.innerHTML = featured.map((cat, idx) => `
+        <div class="bg-white rounded-3xl overflow-hidden border border-cream-200 shadow-sm card-hover flex flex-col justify-between">
+          <div>
+            <div class="relative h-44 overflow-hidden">
+              <img src="${cat.image}" alt="${cat.title}" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110" onerror="this.src='https://placehold.co/600x400/14452e/ffffff?text=${encodeURIComponent(cat.title)}'">
+              <span class="absolute top-3 left-3 bg-brand-900/80 backdrop-blur-md text-emerald-200 text-[10px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wider">
+                Store Range
+              </span>
+            </div>
+            <div class="p-6">
+              <h3 class="font-display font-bold text-lg text-brand-900 mb-1.5">${cat.title}</h3>
+              <p class="text-xs text-gray-600 line-clamp-2 leading-relaxed">${cat.summary}</p>
+            </div>
+          </div>
+          <div class="px-6 pb-6 pt-0">
+            <button onclick="showCategoryDetailModal(${idx})" class="w-full py-2.5 px-3 rounded-xl bg-brand-50 hover:bg-brand-100 text-brand-800 text-xs font-semibold flex items-center justify-center gap-1.5 transition-colors border border-brand-200">
+              <span>View Range Details</span>
+              <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
+            </button>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    function renderProductsCatalog(itemsToRender = GROCERY_CATEGORIES) {
+      const container = document.getElementById('productsGridContainer');
+      if (!container) return;
+
+      if (itemsToRender.length === 0) {
+        container.innerHTML = `
+          <div class="col-span-full py-12 text-center text-gray-500 bg-white rounded-3xl border border-cream-200 p-8">
+            <i data-lucide="search-x" class="w-10 h-10 text-gray-400 mx-auto mb-3"></i>
+            <p class="font-bold text-brand-900">No categories found matching your query</p>
+            <p class="text-xs mt-1">Please try searching for "Grains", "Oils", "Spices" or "Snacks".</p>
+          </div>
+        `;
+        lucide.createIcons();
+        return;
+      }
+
+      container.innerHTML = itemsToRender.map((cat) => {
+        const originalIndex = GROCERY_CATEGORIES.findIndex(c => c.id === cat.id);
+        return `
+        <div class="bg-white rounded-3xl overflow-hidden border border-cream-200 shadow-sm card-hover flex flex-col justify-between">
+          <div>
+            <div class="relative h-48 overflow-hidden group">
+              <img src="${cat.image}" alt="${cat.title}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://placehold.co/600x400/14452e/ffffff?text=${encodeURIComponent(cat.title)}'">
+              <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+              <div class="absolute bottom-3 left-4 right-4">
+                <span class="text-xs font-semibold text-emerald-300 uppercase tracking-wider">Aisle Section</span>
+                <h3 class="text-lg font-bold text-white font-display">${cat.title}</h3>
+              </div>
+            </div>
+            
+            <div class="p-6">
+              <p class="text-xs text-gray-600 leading-relaxed mb-4">${cat.summary}</p>
+              
+              <h4 class="text-[11px] font-bold text-brand-700 uppercase tracking-wider mb-2">Key Items Stocked:</h4>
+              <div class="flex flex-wrap gap-1.5 mb-2">
+                ${cat.items.slice(0, 4).map(item => `
+                  <span class="text-[11px] bg-cream-100 text-brand-900 px-2 py-0.5 rounded-md border border-cream-200 font-medium">
+                    ${item}
+                  </span>
+                `).join('')}
+                ${cat.items.length > 4 ? `<span class="text-[11px] bg-brand-50 text-brand-700 px-2 py-0.5 rounded-md font-semibold">+${cat.items.length - 4} more</span>` : ''}
+              </div>
+            </div>
+          </div>
+
+          <div class="p-6 pt-0 space-y-2">
+            <div class="grid grid-cols-2 gap-2">
+              <button onclick="showCategoryDetailModal(${originalIndex})" class="py-2.5 px-3 rounded-xl bg-brand-700 hover:bg-brand-800 text-white text-xs font-semibold flex items-center justify-center transition-colors">
+                Explore Category
+              </button>
+              <button onclick="openCategoryWhatsApp('${cat.title}') class" onclick="openWhatsAppModal('Hi Jay Bhavani Grocery Store, I would like to enquire about availability for ${encodeURIComponent(cat.title)}.')" class="py-2.5 px-3 rounded-xl bg-cream-100 hover:bg-cream-200 text-brand-900 text-xs font-semibold flex items-center justify-center border border-cream-200 transition-colors">
+                Ask Availability
+              </button>
+            </div>
+          </div>
+        </div>
+      `;
+      }).join('');
+      
+      lucide.createIcons();
+    }
+
+    function renderAllCategoriesGrid() {
+      const container = document.getElementById('allCategoriesGrid');
+      if (!container) return;
+
+      container.innerHTML = GROCERY_CATEGORIES.map((cat, idx) => `
+        <div onclick="showCategoryDetailModal(${idx})" class="cursor-pointer bg-white rounded-2xl p-5 border border-cream-200 shadow-sm card-hover flex flex-col justify-between group">
+          <div>
+            <div class="relative h-32 rounded-xl overflow-hidden mb-4">
+              <img src="${cat.image}" alt="${cat.title}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" onerror="this.src='https://placehold.co/400x300/14452e/ffffff?text=${encodeURIComponent(cat.title)}'">
+              <span class="absolute top-2 right-2 bg-white/90 backdrop-blur-sm text-brand-900 text-[10px] font-bold px-2 py-0.5 rounded-full">
+                #${idx + 1}
+              </span>
+            </div>
+            <h3 class="font-display font-bold text-base text-brand-900 mb-1 group-hover:text-brand-600 transition-colors">${cat.title}</h3>
+            <p class="text-xs text-gray-500 line-clamp-2 leading-relaxed">${cat.summary}</p>
+          </div>
+
+          <div class="mt-4 pt-3 border-t border-cream-100 flex items-center justify-between text-xs font-semibold text-brand-700">
+            <span>${cat.items.length} Product Lines</span>
+            <i data-lucide="chevron-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+          </div>
+        </div>
+      `).join('');
+
+      lucide.createIcons();
+    }
+
+    function renderGallery(tag = 'all') {
+      const container = document.getElementById('galleryContainer');
+      if (!container) return;
+
+      const filtered = tag === 'all' ? GALLERY_ITEMS : GALLERY_ITEMS.filter(item => item.tag === tag);
+
+      container.innerHTML = filtered.map((item, idx) => `
+        <div class="relative group rounded-3xl overflow-hidden shadow-sm h-64 sm:h-72 cursor-pointer bg-cream-200" onclick="openLightbox('${item.img}', '${item.title.replace(/'/g, "\\'")}')">
+          <img src="${item.img}" alt="${item.title}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://placehold.co/600x400/14452e/ffffff?text=Jay+Bhavani+Store'">
+          <div class="absolute inset-0 bg-gradient-to-t from-brand-900/80 via-black/20 to-transparent opacity-80 group-hover:opacity-90 transition-opacity"></div>
+          <div class="absolute bottom-4 left-4 right-4 text-white">
+            <span class="text-[10px] uppercase font-bold tracking-widest text-emerald-300">${item.tag}</span>
+            <h4 class="text-sm font-semibold">${item.title}</h4>
+          </div>
+          <div class="absolute top-4 right-4 w-9 h-9 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-opacity">
+            <i data-lucide="maximize-2" class="w-4 h-4"></i>
+          </div>
+        </div>
+      `).join('');
+
+      lucide.createIcons();
+    }
+
+    function filterGallery(tag) {
+      document.querySelectorAll('.gallery-tag-btn').forEach(btn => {
+        if (btn.getAttribute('data-tag') === tag) {
+          btn.classList.add('bg-brand-700', 'text-white');
+          btn.classList.remove('bg-white', 'text-gray-700', 'hover:bg-cream-100');
+        } else {
+          btn.classList.remove('bg-brand-700', 'text-white');
+          btn.classList.add('bg-white', 'text-gray-700', 'hover:bg-cream-100');
+        }
+      });
+      renderGallery(tag);
+    }
+
+    function showCategoryDetailModal(index) {
+      currentActiveCategoryIndex = index;
+      const cat = GROCERY_CATEGORIES[index];
+      if (!cat) return;
+
+      document.getElementById('catModalImg').src = cat.image;
+      document.getElementById('catModalTitle').innerText = cat.title;
+      document.getElementById('catModalDesc').innerText = cat.summary;
+      
+      const itemsBox = document.getElementById('catModalItems');
+      itemsBox.innerHTML = cat.items.map(item => `
+        <span class="px-3 py-1.5 rounded-xl bg-brand-50 border border-brand-200 text-brand-900 text-xs font-semibold flex items-center gap-1.5">
+          <i data-lucide="check" class="w-3.5 h-3.5 text-brand-600"></i> ${item}
+        </span>
+      `).join('');
+
+      document.getElementById('categoryDetailModal').classList.remove('hidden');
+      lucide.createIcons();
+    }
+
+    function closeCategoryModal() {
+      document.getElementById('categoryDetailModal').classList.add('hidden');
+    }
+
+    function askCategoryOnWhatsApp() {
+      const cat = GROCERY_CATEGORIES[currentActiveCategoryIndex];
+      const categoryName = cat ? cat.title : "Groceries";
+      const message = `Hi Jay Bhavani Grocery Store, I would like to enquire about product availability for ${categoryName}.`;
+      closeCategoryModal();
+      openWhatsAppModal(message);
+    }
+
+    function openWhatsAppModal(customText = null) {
+      const defaultText = "Hi Jay Bhavani Grocery Store, I would like to enquire about product availability.";
+      const input = document.getElementById('whatsAppCustomMsg');
+      if (input) {
+        input.value = customText || defaultText;
+      }
+      document.getElementById('whatsAppModal').classList.remove('hidden');
+      lucide.createIcons();
+    }
+
+    function closeWhatsAppModal() {
+      document.getElementById('whatsAppModal').classList.add('hidden');
+    }
+
+    function sendWhatsAppInquiry() {
+      const text = document.getElementById('whatsAppCustomMsg').value.trim();
+      const phone = "919800000000"; // Informational standard store contact
+      const url = `https://wa.me/${phone}?text=${encodeURIComponent(text)}`;
+      window.open(url, '_blank');
+      closeWhatsAppModal();
+    }
+
+    function openLightbox(src, caption) {
+      document.getElementById('lightboxImg').src = src;
+      document.getElementById('lightboxCaption').innerText = caption;
+      document.getElementById('lightboxModal').classList.remove('hidden');
+      lucide.createIcons();
+    }
+
+    function closeLightbox() {
+      document.getElementById('lightboxModal').classList.add('hidden');
+    }
+
+    function handleCategorySearch(query) {
+      const clean = query.toLowerCase().trim();
+      if (!clean) {
+        renderProductsCatalog(GROCERY_CATEGORIES);
+        return;
+      }
+      const filtered = GROCERY_CATEGORIES.filter(c => 
+        c.title.toLowerCase().includes(clean) ||
+        c.summary.toLowerCase().includes(clean) ||
+        c.items.some(i => i.toLowerCase().includes(clean))
+      );
+      renderProductsCatalog(filtered);
+    }
+
+    function handleInquirySubmit(event) {
+      event.preventDefault();
+      const name = document.getElementById('senderName').value;
+      const phone = document.getElementById('senderPhone').value;
+      const category = document.getElementById('inquiryCategory').value;
+      const notes = document.getElementById('senderMessage').value;
+
+      // Prepare custom text for WhatsApp shortcut
+      const whatsappMsg = `Hi Jay Bhavani Grocery Store, my name is ${name} (${phone}). I would like to enquire about: ${category}. Notes: ${notes}`;
+      
+      const customInput = document.getElementById('whatsAppCustomMsg');
+      if (customInput) {
+        customInput.value = whatsappMsg;
+      }
+
+      // Show confirmation box
+      const successBox = document.getElementById('formSuccessMessage');
+      successBox.classList.remove('hidden');
+      document.getElementById('storeInquiryForm').reset();
+      lucide.createIcons();
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      renderHomeFeaturedCategories();
+      renderProductsCatalog();
+      renderAllCategoriesGrid();
+      renderGallery('all');
+      lucide.createIcons();
+
+      // Listen to browser hash if provided (e.g. #categories or #contact)
+      const initialHash = window.location.hash.replace('#', '');
+      if (['home', 'about', 'products', 'categories', 'why-us', 'gallery', 'contact'].includes(initialHash)) {
+        navigateTo(initialHash);
+      }
+    });
+
+    // Close modals with Escape key
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        closeCategoryModal();
+        closeWhatsAppModal();
+        closeLightbox();
+      }
+    });
+  </script>
+</body>
+</html>
